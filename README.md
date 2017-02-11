@@ -1,4 +1,5 @@
 # Very Austin 2017 Front-end
+[![Build Status](https://travis-ci.org/veryaustin/veryaustin-2017-frontend.svg?branch=master)](https://travis-ci.org/veryaustin/veryaustin-2017-frontend)
 
 React & Redux powered front-end for the 2017 edition of [veryaustin.com](http://veryaustin.com).
 
