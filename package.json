@@ -29,6 +29,7 @@
   "author": "Austin Lauritsen",
   "license": "MIT",
   "dependencies": {
+    "font-awesome": "4.7.0",
     "object-assign": "4.1.0",
     "react": "15.4.1",
     "react-dom": "15.4.1",
@@ -36,7 +37,8 @@
     "react-router": "3.0.0",
     "react-router-redux": "4.0.7",
     "redux": "3.6.0",
-    "redux-thunk": "2.1.0"
+    "redux-thunk": "2.1.0",
+    "styled-components": "1.4.3"
   },
   "devDependencies": {
     "autoprefixer": "6.5.4",

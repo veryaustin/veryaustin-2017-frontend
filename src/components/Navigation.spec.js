@@ -5,7 +5,7 @@ import Navigation from './Navigation';
 describe('Navigation Component', () => {
   it('should render the navigation component', () => {
     const wrapper = shallow(<Navigation />);
-    const navigation = wrapper.type();
+    const navigation = wrapper.find('#main_nav').type();
     const expected = 'nav';
     expect(navigation).toEqual(expected);
   });

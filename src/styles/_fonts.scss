@@ -1,0 +1,82 @@
+// Open Sans Font-face
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/OpenSans-Light.ttf'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('Open Sans'),
+     url('../fonts/OpenSans-Light.ttf'), format('truetype')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/OpenSans-Regular.ttf'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('Open Sans'),
+    url('../fonts/OpenSans-Light.ttf'), format('truetype')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/OpenSans-Semibold.ttf'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('Open Sans'),
+     url('../fonts/OpenSans-Semibold.ttf'), format('truetype')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/OpenSans-Bold.ttf'); /* IE9 Compat Modes */
+  src: local('Open Sans'), local('Open Sans'),
+     url('../fonts/OpenSans-Bold.ttf'), format('truetype')
+}
+
+// Volte Sans Rounded Font-face
+@font-face {
+  font-family: 'Volte Sans Rounded';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/VolteRounded-Light.otf'); /* IE9 Compat Modes */
+  src: local('Volte Sans Rounded'), local('Volte Rounded'),
+     url('../fonts/VolteRounded-Light.otf'), format('opentype')
+}
+
+@font-face {
+  font-family: 'Volte Sans Rounded';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/VolteRounded-Regular.otf'); /* IE9 Compat Modes */
+  src: local('Volte Sans Rounded'), local('Volte Rounded'),
+    url('../fonts/VolteRounded-Regular.otf'), format('opentype')
+}
+
+@font-face {
+  font-family: 'Volte Sans Rounded';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/VolteRounded-Medium.otf'); /* IE9 Compat Modes */
+  src: local('Volte Sans Rounded'), local('Volte Rounded'),
+    url('../fonts/VolteRounded-Medium.otf'), format('opentype')
+}
+
+@font-face {
+  font-family: 'Volte Sans Rounded';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/VolteRounded-Semibold.otf'); /* IE9 Compat Modes */
+  src: local('Volte Sans Rounded'), local('Volte Rounded'),
+     url('../fonts/VolteRounded-Semibold.otf') format('opentype')
+}
+
+@font-face {
+  font-family: 'Volte Sans Rounded';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/VolteRounded-Bold.otf'); /* IE9 Compat Modes */
+  src: local('Volte Sans Rounded'), local('Volte Rounded'),
+     url('../fonts/VolteRounded-Bold.otf') format('opentype')
+}

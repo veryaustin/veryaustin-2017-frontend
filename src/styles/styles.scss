@@ -1,0 +1,85 @@
+@import 'normalize';
+@import 'fonts';
+
+$primary: #4A4A4A;
+$highlight: #D0011B;
+$light_grey: #C5C5C5;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Open Sans', sans-serif;
+  color: $primary;
+}
+
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+.wrapper {
+  width: 960px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $highlight;
+}
+
+#top_header {
+  padding: 1em 0;
+  border-bottom: 1px solid $light_grey;
+  .logo {
+    float: left;
+    margin: 0;
+    color: $primary;
+    font-family: 'Volte Sans Rounded';
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.30px;
+  }
+  #main_nav {
+    float: right;
+    font-size: 14px;
+    font-weight: 200;
+    padding-top: .4em;
+    a {
+      margin-left: 2.625em;
+      color: $primary;
+      &:hover, &:active {
+        text-decoration: underline;
+      }
+    }
+    // React activeClassName does not support &:active pseudo classes at this time. Visit https://github.com/styled-components/styled-components/issues/184 for more.
+    .active {
+      text-decoration: underline;
+    }
+  }
+}
+
+#flatmacbook {
+  margin: 197px 0 0 -90px;
+}
+
+@media only screen and (max-width: 768px) {
+  #main_nav {
+    display: none;
+  }
+  #main_nav.active {
+    display: block;
+    width: 100%;
+    a {
+      margin: 0 !important;
+      display: block;
+      padding: 1em 0;
+      border-bottom: 1px solid $light_grey;
+      &:last-child {
+        border-bottom: none;
+      }
+   }
+  }
+}
