@@ -10,7 +10,6 @@ React & Redux powered front-end for the 2017 edition of [veryaustin.com](http://
 
 
 ### Credits/Thanks:
-
 *  Thanks to [Cory House](http://www.bitnative.com/) for the great React|Redux starter kit [react-slingshot](https://github.com/coryhouse/react-slingshot).
 *  Thanks to [Facebook](http://facebook.com) for the [React](https://github.com/facebook/react) JavaScript library.
 *  Thanks to to the development team for the [Redux](http://redux.js.org/) state container for this project.
