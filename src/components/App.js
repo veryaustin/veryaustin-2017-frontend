@@ -1,11 +1,20 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
+import Header from './Header';
 
 class App extends Component {
   render() {
     return(
-      <div>This is the main App container. Everything is wired up correctly.</div>
+      <div className="application">
+        <Header />
+        {this.props.children}
+      </div>
     );
   }
 }
+
+// Typechecking App props
+App.propTypes = {
+  children: PropTypes.string
+};
 
 export default App;
