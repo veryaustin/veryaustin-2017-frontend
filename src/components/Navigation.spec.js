@@ -16,7 +16,6 @@ describe('Navigation Component', () => {
     expect(navigation).toEqual('nav');
   });
 
-  // Preliminary Tests for navigational links
   describe('Links', () => {
     it('to the home page', () => {
       const link = wrapper.find('IndexLink');
