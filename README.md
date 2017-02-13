@@ -1,6 +1,8 @@
 # Very Austin 2017 Front-end
+
+## React & Redux powered front-end for the 2017 edition of [veryaustin.com](http://veryaustin.com).
+
 [![Build Status](https://travis-ci.org/veryaustin/veryaustin-2017-frontend.svg?branch=master)](https://travis-ci.org/veryaustin/veryaustin-2017-frontend) [![Coverage Status](https://coveralls.io/repos/github/veryaustin/veryaustin-2017-frontend/badge.svg?branch=master)](https://coveralls.io/github/veryaustin/veryaustin-2017-frontend?)
-React & Redux powered front-end for the 2017 edition of [veryaustin.com](http://veryaustin.com).
 
 ### Installation:
 1. Download or clone (`git clone git@github.com:veryaustin/veryaustin-2017-frontend.git`)
