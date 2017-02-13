@@ -14,12 +14,12 @@ const Button = styled.div`
   }
 `;
 
-const MenuButton = props => {
+const MenuButton = () => {
  return(
    <Button>
       <Bars className="fa fa-bars" />
    </Button>
  ); 
-}
+};
 
 export default MenuButton;
