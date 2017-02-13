@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {IndexLink} from 'react-router';
+import {Link, IndexLink} from 'react-router';
 import MenuButton from './MenuButton';
 
 class Navigation extends Component {
@@ -8,8 +8,8 @@ class Navigation extends Component {
      <div>
      <MenuButton />
       <nav id="main_nav">
-        <IndexLink to="/">Home</IndexLink>
-        <a href="#">Work</a>
+        <IndexLink to="/" activeClassName="active">Home</IndexLink>
+        <Link to="work" activeClassName="active">Work</Link>
         <a href="#">About</a>
         <a href="http://writing.veryaustin.com">Writing</a>
         <a href="#">Contact</a>
