@@ -9,7 +9,7 @@ describe('Navigation Component', () => {
     wrapper = shallow(<Navigation />);
   });
 
-  // Coponent Tests
+  // Component Tests
   it('should render the navigation component', () => {
     const wrapper = shallow(<Navigation />);
     const navigation = wrapper.find('#main_nav').type();
