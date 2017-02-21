@@ -3,10 +3,10 @@ import {shallow} from 'enzyme';
 import Work from './Work';
 
 describe('Work Component', () => {
-  it('renders the home component', () => {
+  it('renders the work component', () => {
     const wrapper = shallow(<Work />);
-    const home = wrapper.find('#work').length;
+    const work = wrapper.find('#work').length;
     const expected = 1;
-    expect(home).toEqual(expected);
+    expect(work).toEqual(expected);
   });
 });

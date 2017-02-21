@@ -14,9 +14,9 @@ const Button = styled.div`
   }
 `;
 
-const MenuButton = () => {
+const MenuButton = props => {
  return(
-   <Button>
+   <Button {...props}>
       <Bars className="fa fa-bars" />
    </Button>
  ); 
