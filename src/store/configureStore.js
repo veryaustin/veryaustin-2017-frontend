@@ -2,7 +2,7 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
-import ReduxPromise from '/redux-promise';
+import ReduxPromise from 'redux-promise';
 
 function configureStoreProd(initialState) {
   const middlewares = [
