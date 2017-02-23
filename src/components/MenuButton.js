@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 
 const Bars = styled.i`
@@ -14,12 +14,17 @@ const Button = styled.div`
   }
 `;
 
-const MenuButton = props => {
- return(
-   <Button {...props}>
+const MenuButton = ({onClick}) => {
+  return(
+    <Button onClick = {onClick} >
       <Bars className="fa fa-bars" />
-   </Button>
- ); 
+    </Button>
+  );
+};
+
+// MenuButton Props Validation
+MenuButton.propTypes = {
+  onClick: PropTypes.func
 };
 
 export default MenuButton;
