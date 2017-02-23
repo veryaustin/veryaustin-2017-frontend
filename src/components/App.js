@@ -12,7 +12,7 @@ class App extends Component {
   }
 }
 
-// Typechecking App props
+//  App Prop Validation
 App.propTypes = {
   children: PropTypes.string
 };
