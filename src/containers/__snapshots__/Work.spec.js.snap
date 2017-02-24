@@ -1,0 +1,14 @@
+exports[`Work Component renders the work component 1`] = `
+<Work
+  fetchWork={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  } />
+`;
