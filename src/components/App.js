@@ -14,7 +14,7 @@ class App extends Component {
 
 //  App Prop Validation
 App.propTypes = {
-  children: PropTypes.string
+  children: PropTypes.object
 };
 
 export default App;
