@@ -14,7 +14,7 @@ describe('Work Component', () => {
   });
   
   it('renders the work component', () => {
-    const wrapper = shallow(<Work store={store}/>);
+    const wrapper = shallow(<Work store={store} />);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });
