@@ -1,0 +1,15 @@
+exports[`About Component renders the about component 1`] = `
+<About
+  about={Object {}}
+  fetchAbout={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  } />
+`;

@@ -1,0 +1,1 @@
+export const ROOT_URL = 'https://veryaustin-55602.firebaseio.com';
