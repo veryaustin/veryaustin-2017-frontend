@@ -30,7 +30,9 @@ class Work extends Component {
     // Destructure the work object
     const {title, slogan, projects} = this.props.work;
     if (!projects) {
-      return <div>Loading</div>
+      return (
+        <div>Loading</div>
+      );
     }
     return (
       <div id="work">

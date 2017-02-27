@@ -14,7 +14,7 @@ describe('About Component', () => {
  });
 
  it('renders the about component', () => {
-    const wrapper = shallow(<About store={store} />)
+    const wrapper = shallow(<About store={store} />);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
   });
 });
