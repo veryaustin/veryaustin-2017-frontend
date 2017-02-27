@@ -7,6 +7,7 @@ node_js:
 branches:
   only:
     - master
+    - development
 after_success:
   # Send coverage data to coveralls.
   - yarn run test:cover:travis
