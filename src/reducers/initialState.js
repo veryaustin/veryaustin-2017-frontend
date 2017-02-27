@@ -1,3 +1,4 @@
 export default {
-  work: {}
+  work: {},
+  about: {}
 };

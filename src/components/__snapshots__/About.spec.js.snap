@@ -1,6 +1,7 @@
-exports[`Work Component renders the work component 1`] = `
-<Work
-  fetchWork={[Function]}
+exports[`About Component renders the about component 1`] = `
+<About
+  about={Object {}}
+  fetchAbout={[Function]}
   store={
     Object {
       "clearActions": [Function],
@@ -10,6 +11,5 @@ exports[`Work Component renders the work component 1`] = `
       "replaceReducer": [Function],
       "subscribe": [Function],
     }
-  }
-  work={Object {}} />
+  } />
 `;
