@@ -1,9 +1,10 @@
-import {WORK_FETCH} from '../constants/actionTypes';
+import * as actions from '../constants/actionTypes';
+import initialState from './initialState';
 
-export default function(state = [], action) {
+export default function(state = initialState.work, action) {
   switch(action.type) {
-    case WORK_FETCH:
-      return Object.assign(action.payload.data, state);
+    case actions.WORK_FETCH:
+      return Object.assign(...state, action.payload.data);
     default:
       return state;
   }

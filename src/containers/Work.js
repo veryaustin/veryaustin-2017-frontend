@@ -5,7 +5,7 @@ import {fetchWork} from '../actions/workActions';
 import {Link} from 'react-router';
 
 class Work extends Component {
-  // Ajax Call to get API data when the component mounts
+  // Ajax call to get API data when the component mounts
   componentWillMount() {
     this.props.fetchWork("work");
   }
@@ -26,10 +26,17 @@ class Work extends Component {
   }
 
   // Map over the returned data from the action creator and format it on the page
-  render(){
+  render() {
+    // Destructure the work object
+    const {title, slogan, projects} = this.props.work;
+    if (!projects) {
+      return <div>Loading</div>
+    }
     return (
       <div id="work">
-        {this.props.work.map(this.renderWork)}
+        <h1>{title}</h1>
+        <h3>{slogan}</h3>
+        {projects.map(this.renderWork)}
       </div>
     );
   }
@@ -48,7 +55,7 @@ function mapDispatchToProps(dispatch) {
 // Work Props Validation
 Work.propTypes = {
   fetchWork: PropTypes.func,
-  work: PropTypes.array
+  work: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Work);

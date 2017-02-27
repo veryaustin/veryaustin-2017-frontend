@@ -1,11 +1,13 @@
 import * as ActionTypes from '../constants/actionTypes';
+import {ROOT_URL} from '../constants/apiEndpoints';
 import axios from 'axios';
-
-const ROOT_URL = 'https://veryaustin-55602.firebaseio.com/';
 
 export function fetchWork(page) {
   const url = `${ROOT_URL}/${page}.json`;
-  const request = axios.get(url);
+  const request = axios.get(url)
+    .catch(function(error){
+      console.log(error);
+    });
 
   return {
     type: ActionTypes.WORK_FETCH,

@@ -4,7 +4,7 @@ import workReducer from './workReducer';
 
 const rootReducer = combineReducers({
     routing: routerReducer,
-    work: workReducer
+    work: workReducer,
 });
 
 export default rootReducer;
