@@ -5,7 +5,7 @@ import axios from 'axios';
 export function fetchHome(page) {
   const url = `${DATA_ROOT_URL}/${page}.json`;
   const request = axios.get(url)
-    .catch(function(error){
+    .catch((error) => {
       console.log('Failed to fetch home page data', error);
     });
 
