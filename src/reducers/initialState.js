@@ -1,5 +1,6 @@
 export default {
   home: {},
   work: {},
-  about: {}
+  about: {},
+  contact: {}
 };
