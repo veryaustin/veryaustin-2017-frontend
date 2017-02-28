@@ -5,7 +5,7 @@ import {fetchWork} from '../actions/workActions';
 import {Link} from 'react-router';
 
 class Work extends Component {
-  // Ajax call to get API data when the component mounts
+  // Ajax call to get API data before the component mounts
   componentWillMount() {
     this.props.fetchWork("work");
   }
