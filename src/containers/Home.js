@@ -10,6 +10,7 @@ class Home extends Component {
  }
 
   render() {
+    // Destructure the home object
     const {name, slogan, image_url} = this.props.home;
     return(
       <div id="home">
