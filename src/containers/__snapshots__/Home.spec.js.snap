@@ -1,0 +1,14 @@
+exports[`Home Component renders the home component 1`] = `
+<Home
+  fetchHome={[Function]}
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  } />
+`;
