@@ -12,6 +12,7 @@ describe('Contact Component', () => {
     mockStore = configureStore(middlewares);
     store = mockStore(initialState);
   });
+  
   it('renders the work component', () => {
     const wrapper = shallow(<Contact store={store} />);
     expect(shallowToJson(wrapper)).toMatchSnapshot();
