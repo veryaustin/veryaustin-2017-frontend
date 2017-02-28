@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchAbout} from '../actions/aboutActions';
 
 class About extends Component {
-  // Ajax call to get API data when the component mounts
+  // Ajax call to get API data before the component mounts
   componentWillMount() {
     this.props.fetchAbout('about');
   }

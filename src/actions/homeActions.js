@@ -2,15 +2,15 @@ import * as actions from '../constants/actionTypes';
 import {DATA_ROOT_URL} from '../constants/apiEndpoints';
 import axios from 'axios';
 
-export function fetchAbout(page) {
+export function fetchHome(page) {
   const url = `${DATA_ROOT_URL}/${page}.json`;
   const request = axios.get(url)
     .catch(function(error){
-      console.log('Failed to fetch about page data', error);
+      console.log('Failed to fetch home page data', error);
     });
 
   return {
-    type: actions.ABOUT_FETCH,
+    type: actions.HOME_FETCH,
     payload: request
   };
 }
