@@ -4,7 +4,7 @@ import App from './components/App';
 import Home from './containers/Home';
 import Work from './containers/Work';
 import About from './containers/About';
-import Contact from './components/Contact';
+import Contact from './containers/Contact';
 
 export default (
   <Route path="/" component={App}>
