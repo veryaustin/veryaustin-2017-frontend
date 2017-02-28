@@ -10,10 +10,20 @@ class Home extends Component {
  }
 
   render() {
+    const {name, slogan, image_url} = this.props.home;
     return(
-      <div id="home">This is the New Home Component</div>
+      <div id="home">
+       <h1>{name}</h1>
+       <h3>{slogan}</h3>
+       <img src={image_url} />
+      </div>
     );
   }
+}
+
+// Map State To Props 
+function mapStateToProps({home}) {
+  return {home};
 }
 
 // Bind actions and dispatch them
@@ -27,4 +37,4 @@ Home.propTypes = {
   home: PropTypes.object
 };
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
