@@ -1,4 +1,4 @@
-import * as ActionTypes from '../constants/actionTypes';
+import * as actions from '../constants/actionTypes';
 import {DATA_ROOT_URL} from '../constants/apiEndpoints';
 import axios from 'axios';
 
@@ -10,7 +10,7 @@ export function fetchAbout(page) {
     });
 
   return {
-    type: ActionTypes.ABOUT_FETCH,
+    type: actions.ABOUT_FETCH,
     payload: request
   };
 }
