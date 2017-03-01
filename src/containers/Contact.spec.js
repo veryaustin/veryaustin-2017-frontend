@@ -2,7 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {shallowToJson} from 'enzyme-to-json';
 import configureStore from 'redux-mock-store';
-import initialState from '../reducers/InitialState';
+import initialState from '../reducers/initialState';
 import Contact from './Contact';
 
 describe('Contact Component', () => {
