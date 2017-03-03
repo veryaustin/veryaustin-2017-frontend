@@ -5,7 +5,7 @@ import MenuButton from './MenuButton';
 describe('Menu Button Component', () => {
   it('renders the menu bar', () => {
     const  wrapper = shallow(<MenuButton />);
-    const menuButton = wrapper.find('.fa-bars').length;
-    expect(menuButton).toBe(1);
+    const menuButton = wrapper.find('.fa-bars');
+    expect(menuButton).toExist;
   });
 });

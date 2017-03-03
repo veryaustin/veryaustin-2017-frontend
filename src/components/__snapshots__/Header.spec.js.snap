@@ -1,0 +1,11 @@
+exports[`Header Component renders the header component 1`] = `
+<styled.header>
+  <styled.div>
+    <Styled(Link)
+      to="/">
+      Austin Lauritsen
+    </Styled(Link)>
+    <Navigation />
+  </styled.div>
+</styled.header>
+`;

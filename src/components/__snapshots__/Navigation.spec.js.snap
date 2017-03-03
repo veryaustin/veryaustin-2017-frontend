@@ -1,0 +1,56 @@
+exports[`Navigation Component renders the navigation component 1`] = `
+<div>
+  <MenuButton
+    data-qa-id="menu-button"
+    onClick={[Function]} />
+  <styled.nav
+    data-qa-id="main-navigation"
+    navToggled={false}>
+    <Styled(IndexLink)
+      activeStyle={
+        Object {
+          "textDecoration": "underline",
+        }
+      }
+      onClick={[Function]}
+      to="/">
+      Home
+    </Styled(IndexLink)>
+    <Styled(Link)
+      activeStyle={
+        Object {
+          "textDecoration": "underline",
+        }
+      }
+      onClick={[Function]}
+      to="work">
+      Work
+    </Styled(Link)>
+    <Styled(Link)
+      activeStyle={
+        Object {
+          "textDecoration": "underline",
+        }
+      }
+      onClick={[Function]}
+      to="about">
+      About
+    </Styled(Link)>
+    <Styled(Link)
+      className=""
+      href="http://writing.veryaustin.com">
+      Writing
+    </Styled(Link)>
+    <Styled(Link)
+      activeStyle={
+        Object {
+          "textDecoration": "underline",
+        }
+      }
+      onClick={[Function]}
+      to="contact">
+      Contact
+    </Styled(Link)>
+  </styled.nav>
+</div>
+`;

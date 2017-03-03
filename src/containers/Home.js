@@ -16,7 +16,7 @@ class Home extends Component {
       <div id="home">
        <h1>{name}</h1>
        <h3>{slogan}</h3>
-       <img src={image_url} />
+       <img id="flatmacbook" src={image_url} />
       </div>
     );
   }

@@ -1,46 +1,90 @@
 import React, {Component} from 'react';
 import {Link, IndexLink} from 'react-router';
+import styled, {css} from 'styled-components';
 import MenuButton from './MenuButton';
 
+// Main Navigation Component Styles
+const MainNavigation = styled.nav`
+  float: right;
+  font-size: 14px;
+  font-weight: 200;
+  padding-top: .4em;
+
+  @media only screen and (max-width: 768px) {
+    display: ${props => props.navToggled ? 'block' : 'none'}
+    width: 100%;
+  }
+`;
+
+// Navigation Link Styles
+const NavLinkStyles = css`
+  margin-left: 2.625em;
+  color: #4A4A4A;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @media only screen and (max-width: 768px) {
+    margin: 0 !important;
+    display: block
+    padding: 1em 0;
+    border-bottom: 1px solid #C5C5C5;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+`;
+
+/* Navigation Link Component Styles
+No Pseudo Class support for react router activeStyleClass. Inline
+activeStyle used until issue is resolved
+*/
+const NavLink = styled(Link)`
+  ${NavLinkStyles}
+`;
+
+// Navigation IndexLink Component Styles
+const IndexNavLink = styled(IndexLink)`
+  ${NavLinkStyles}
+`;
+
+// Navigation Component
 class Navigation extends Component {
 
   // Component state for navigation toggle on mobile devices
   constructor(props){
     super(props);
-    this.state = {nav: null};
+    this.state = {navToggled: false};
     
-    // Bind helper functions this in the constructor to cleanup the render function
+    // Bind helper function 'this' in the constructor to cleanup the render function
     this.toggleNav = this.toggleNav.bind(this);
+    // Bind helper function 'this' to close navigation on navigation link click
     this.handleNavClick = this.handleNavClick.bind(this);
   }
 
   // Toggle the mobile navigation on mobile 
   toggleNav() {
-    let navigation = this.state.nav;
-
-    if(navigation == "active"){
-      this.setState({nav: ''});
-    } else {
-      this.setState({nav: "active"});
-    }
+    let navToggled = !this.state.navToggled;
+    this.setState({navToggled});
   }
 
   // Hide the mobile menu when clicking a link in the navigation
   handleNavClick() {
-    this.setState({nav: ''});
+    this.setState({navToggled: false});
   }
 
   render() {
    return(
      <div>
-      <MenuButton onClick={this.toggleNav} />
-      <nav id="main_nav" className={this.state.nav}>
-        <IndexLink to="/" activeClassName="active" onClick={this.handleNavClick}>Home</IndexLink>
-        <Link to="work" activeClassName="active" onClick={this.handleNavClick}>Work</Link>
-        <Link to ="about" activeClassName="active" onClick={this.handleNavClick}>About</Link>
-        <a href="http://writing.veryaustin.com">Writing</a>
-        <Link to="contact" activeClassName="active" onClick={this.handleNavClick}>Contact</Link>
-      </nav>
+      <MenuButton data-qa-id="menu-button" onClick={this.toggleNav} />
+      <MainNavigation data-qa-id="main-navigation" navToggled={this.state.navToggled}>
+        <IndexNavLink to="/" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Home</IndexNavLink>
+        <NavLink to="work" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Work</NavLink>
+        <NavLink to="about" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>About</NavLink>
+        <NavLink href="http://writing.veryaustin.com" className="">Writing</NavLink>
+        <NavLink to="contact" activeStyle={{ textDecoration: "underline"}} onClick={this.handleNavClick}>Contact</NavLink>
+      </MainNavigation>
     </div>
    );
  }
