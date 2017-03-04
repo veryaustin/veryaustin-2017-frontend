@@ -1,0 +1,9 @@
+exports[`Home Reducer should handle the HOME_FETCH action 1`] = `
+Object {
+  "image_url": "test_url",
+  "name": "test_name",
+  "slogan": "test_slogan",
+}
+`;
+
+exports[`Home Reducer should return the initial state 1`] = `Object {}`;

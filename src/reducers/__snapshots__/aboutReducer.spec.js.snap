@@ -1,0 +1,9 @@
+exports[`About Reducer should handle the ABOUT_FETCH action 1`] = `
+Object {
+  "intro": "This is a test of the about introduction",
+  "photo": "http://test_about_photo_url",
+  "title": "Test Title",
+}
+`;
+
+exports[`About Reducer should return the initial state 1`] = `Object {}`;

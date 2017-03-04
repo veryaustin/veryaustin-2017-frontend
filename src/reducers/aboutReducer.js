@@ -5,7 +5,7 @@ const {about} = initialState;
 export default function(state = about, action) {
   switch(action.type) {
     case actions.ABOUT_FETCH:
-      return Object.assign(...state, action.payload.data);
+      return Object.assign(action.payload.data, state);
     default:
       return state;
   }

@@ -5,7 +5,7 @@ const {home} = initialState;
 export default function(state = home, action) {
   switch(action.type) {
     case actions.HOME_FETCH:
-      return Object.assign(...state, action.payload.data);
+      return Object.assign(action.payload.data, state);
     default:
       return state;
   }
