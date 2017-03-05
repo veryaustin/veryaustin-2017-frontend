@@ -2,8 +2,8 @@ import * as actions from '../constants/actionTypes';
 import {DATA_ROOT_URL} from '../constants/apiEndpoints';
 import axios from 'axios';
 
-export function fetchHome(path) {
-  let page = path = '/' ? 'home' : path;
+export function fetchData(path = '/') {
+  const page = (path == '/' ? 'home' : path);
   const url = `${DATA_ROOT_URL}/${page}.json`;
   const request = axios.get(url)
     .catch((error) => {
@@ -11,7 +11,7 @@ export function fetchHome(path) {
     });
 
   return {
-    type: actions.HOME_FETCH,
+    type: actions.DATA_FETCH,
     payload: request
   };
 }

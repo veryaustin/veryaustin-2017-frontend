@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchAbout} from '../actions/aboutActions';
+import {fetchData} from '../actions/dataActions';
 
 class About extends Component {
   // Ajax call to get API data before the component mounts
@@ -29,7 +29,7 @@ function mapStateToProps({about}) {
 
 // Bind the actions and dispatch them
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchAbout}, dispatch);
+  return bindActionCreators({fetchAbout: fetchData}, dispatch);
 }
 
 // About Props Validation

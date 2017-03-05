@@ -17,7 +17,7 @@ describe('Home Reducer',() => {
     };
 
     const action = {
-      type: types.HOME_FETCH,
+      type: types.DATA_FETCH,
       payload: {data: testData}
     };
     

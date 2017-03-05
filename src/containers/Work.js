@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchWork} from '../actions/workActions';
+import {fetchData} from '../actions/dataActions';
 import {Link} from 'react-router';
 
 class Work extends Component {
@@ -51,7 +51,7 @@ function mapStateToProps({work}) {
 
 // Bind the actions and dispatch them
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchWork}, dispatch);
+  return bindActionCreators({fetchWork: fetchData}, dispatch);
 }
 
 // Work Props Validation

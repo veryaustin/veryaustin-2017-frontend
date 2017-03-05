@@ -34,7 +34,7 @@ describe('Work Reducer',() => {
     };
 
     const action = {
-      type: types.WORK_FETCH,
+      type: types.DATA_FETCH,
       payload: {data: testData}
     };
     

@@ -1,10 +1,8 @@
 exports[`Navigation Component renders the navigation component 1`] = `
 <div>
   <MenuButton
-    data-qa-id="menu-button"
     onClick={[Function]} />
   <styled.nav
-    data-qa-id="main-navigation"
     navToggled={false}>
     <Styled(IndexLink)
       activeStyle={

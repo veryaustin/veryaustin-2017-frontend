@@ -77,8 +77,8 @@ class Navigation extends Component {
   render() {
    return(
      <div>
-      <MenuButton data-qa-id="menu-button" onClick={this.toggleNav} />
-      <MainNavigation data-qa-id="main-navigation" navToggled={this.state.navToggled}>
+      <MenuButton onClick={this.toggleNav} />
+      <MainNavigation navToggled={this.state.navToggled}>
         <IndexNavLink to="/" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Home</IndexNavLink>
         <NavLink to="work" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Work</NavLink>
         <NavLink to="about" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>About</NavLink>

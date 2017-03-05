@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchContact} from '../actions/contactActions';
+import {fetchData} from '../actions/dataActions';
 
 class Contact extends Component {
   // Ajax call to get API data before the component mounts
@@ -46,7 +46,7 @@ function mapStateToProps({contact}) {
 
 // Bind the actions and dispatch them
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchContact}, dispatch);
+  return bindActionCreators({fetchContact: fetchData}, dispatch);
 }
 
 // Contact Props Validation
