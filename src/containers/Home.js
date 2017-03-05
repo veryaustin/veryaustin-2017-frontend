@@ -6,7 +6,7 @@ import {fetchHome} from '../actions/homeActions';
 class Home extends Component {
  // Ajax call to get API data before the component mounts
  componentWillMount() {
-   this.props.fetchHome("home");
+   this.props.fetchHome(this.props.route.path);
  }
 
   render() {
@@ -17,13 +17,14 @@ class Home extends Component {
        <h1>{name}</h1>
        <h3>{slogan}</h3>
        <img id="flatmacbook" src={image_url} />
+
       </div>
     );
   }
 }
 
 // Map State To Props 
-function mapStateToProps({home}) {
+function mapStateToProps({home},) {
   return {home};
 }
 
@@ -35,7 +36,8 @@ function mapDispatchToProps(dispatch) {
 //  Home Props Validation
 Home.propTypes = {
   fetchHome: PropTypes.func,
-  home: PropTypes.object
+  home: PropTypes.object,
+  route: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

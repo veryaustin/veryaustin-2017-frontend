@@ -6,7 +6,7 @@ import {fetchAbout} from '../actions/aboutActions';
 class About extends Component {
   // Ajax call to get API data before the component mounts
   componentWillMount() {
-    this.props.fetchAbout('about');
+    this.props.fetchAbout(this.props.route.path);
   }
   
   render() {
@@ -35,7 +35,8 @@ function mapDispatchToProps(dispatch) {
 // About Props Validation
 About.propTypes = {
   fetchAbout: PropTypes.func,
-  about: PropTypes.object
+  about: PropTypes.object,
+  route: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);

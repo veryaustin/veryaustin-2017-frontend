@@ -6,7 +6,7 @@ import {fetchContact} from '../actions/contactActions';
 class Contact extends Component {
   // Ajax call to get API data before the component mounts
   componentWillMount() {
-    this.props.fetchContact("contact");
+    this.props.fetchContact(this.props.route.path);
   }
   
   // Helper function to render the various ways to contact
@@ -52,7 +52,8 @@ function mapDispatchToProps(dispatch) {
 // Contact Props Validation
 Contact.propTypes = {
   fetchContact: PropTypes.func,
-  contact: PropTypes.object
+  contact: PropTypes.object,
+  route: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contact);

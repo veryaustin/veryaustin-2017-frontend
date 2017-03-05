@@ -7,7 +7,7 @@ import {Link} from 'react-router';
 class Work extends Component {
   // Ajax call to get API data before the component mounts
   componentWillMount() {
-    this.props.fetchWork("work");
+    this.props.fetchWork(this.props.route.path);
   }
 
   // Helper function to render the various sections
@@ -57,7 +57,8 @@ function mapDispatchToProps(dispatch) {
 // Work Props Validation
 Work.propTypes = {
   fetchWork: PropTypes.func,
-  work: PropTypes.object
+  work: PropTypes.object,
+  route: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Work);
