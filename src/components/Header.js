@@ -23,6 +23,7 @@ const Logo = styled(Link)`
   letter-spacing: -0.30px; 
 `;
 
+// Header Component
 const Header = () => {
   return(
     <MainHeader>
