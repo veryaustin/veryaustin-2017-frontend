@@ -36,7 +36,7 @@ const Title = styled.h1`
   @media only screen and (min-width: 1440px) and (max-width: 1919px) {
     font-size: 6em;
   }
-  @media only screen and (min-width: 1920px) and (max-width: 2560px) {
+  @media only screen and (min-width: 1920px) {
     font-size: 9em;
   }
 `;
@@ -63,7 +63,7 @@ const Caption = styled.h3`
   @media only screen and (min-width: 1440px) and (max-width: 1919px) {
     font-size: 1.6875em;
   }
-  @media only screen and (min-width: 1920px) and (max-width: 2560px) {
+  @media only screen and (min-width: 1920px) {
     font-size: 2.53125em;
   }
 `;
