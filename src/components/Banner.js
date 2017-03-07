@@ -1,19 +1,16 @@
-import React from 'react';
+import React, {PropTypes} from 'react';
 import styled from 'styled-components';
-import Wrapper from './Wrapper';
 
 const Header = styled.header`
-  background: url(${props => props.image_url});
-  background-repeat: no-repeat;
-  background-size: ${props => props.left ? "50% 50%" : props.right ? "50% 50%" : "100% 100%"};
+  background: linear-gradient(${props => props.dark ? "rgba(00,00,00, .75), rgba(00,00,00, .75)" : "rgba(00,00,00, .0), rgba(00,00,00, .0)"}), url(${props => props.image_url}) no-repeat center center;
+  background-size: ${props => props.left ? "50% 50%" : props.right ? "50% 50%" : "cover"};
   background-position: ${props => props.left ? "115% center" : props.right ? "-15% center" : "center"};
-  background-color: ${props => props.dark ? "#212425" : "#FFFFFF"};
   height: 100vh;
   @media only screen and (max-width: 768px) {
-    background-size: 75% 75%;
+    background-size: ${props => props.left ? "75% 75%" : props.right ? "75% 75%" : "cover"};
     background-position: center;
   }
-`
+`;
 
 const Title = styled.h1`
   font-family: Volte Sans Rounded;
@@ -25,6 +22,7 @@ const Title = styled.h1`
   letter-spacing: -2.91px;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     font-size: 3.25em;
+    float: none;
   }
   @media only screen and (max-width: 768px) {
     float: none;
@@ -43,14 +41,15 @@ const Title = styled.h1`
   }
 `;
 
-const Slogan = styled.h3`
+const Caption = styled.h3`
   font-family: Volte Sans Rounded;
   font-weight: 300;
   font-size: 1.125em;
   color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
-  margin: 10px 0;
+  margin: 20px 0;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     font-size: 1em;
+    float: none;
   }
   @media only screen and (max-width: 767px) {
     float: none;
@@ -74,7 +73,7 @@ const Container = styled.div`
   text-align: ${props => props.left ? "left" : props => props.right ? "right" : "center"};
   padding: ${props => props.left ? "0 0 0 2.625em" : props => props.right ? "0 2.625em 0 0" : "0 0 0 0"};
   position: relative;
-  top: 50%;
+  top: 45%;
   @media only screen and (max-width: 768px) {
     text-align: center;
     width: 100%;
@@ -86,14 +85,21 @@ const Container = styled.div`
 `;
 
 const Banner = (props) => {
+  const {title, caption} = props;
   return (
     <Header {...props}>
       <Container {...props}>
-        <Title {...props}>{props.name}</Title>
-        <Slogan {...props}>{props.slogan}</Slogan>
+        <Title {...props}>{title}</Title>
+        <Caption {...props}>{caption}</Caption>
       </Container>
     </Header>
-  )
+  );
+};
+
+// Banner Props Validation
+Banner.propTypes = {
+  title: PropTypes.string,
+  caption: PropTypes.string
 };
 
 export default Banner;

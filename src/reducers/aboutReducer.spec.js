@@ -17,7 +17,7 @@ describe('About Reducer',() => {
     };
 
     const action = {
-      type: types.DATA_FETCH,
+     type: types.ABOUT_FETCH,
       payload: {data: testData}
     };
     

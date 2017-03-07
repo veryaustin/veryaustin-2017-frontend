@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchData} from '../actions/dataActions';
+import {fetchContact} from '../actions/contactActions';
+import Banner from '../components/Banner';
 
 class Contact extends Component {
   // Ajax call to get API data before the component mounts
@@ -23,18 +24,14 @@ class Contact extends Component {
 
   render() {
     // Destructure the contact object
-    const {title, slogan, contactInfo} = this.props.contact;
+    const {title, caption, contactInfo} = this.props.contact;
     if (!contactInfo) {
       return (
         <div>Loading</div>
       );
     }
-    return(
-      <div id="contact">
-        <h1>{title}</h1>
-        <h3>{slogan}</h3>
-        {contactInfo.map(this.renderContacts)}
-      </div>
+    return (
+      <Banner title={title} caption={caption} />
     );
   }
 }
@@ -46,7 +43,7 @@ function mapStateToProps({contact}) {
 
 // Bind the actions and dispatch them
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchContact: fetchData}, dispatch);
+  return bindActionCreators({fetchContact}, dispatch);
 }
 
 // Contact Props Validation

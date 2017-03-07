@@ -19,4 +19,4 @@ describe ('Footer Component', () => {
     // const date = wrapper.find(thisYear)
     expect(wrapper.find(thisYear)).toExist;
   });
-})
+});

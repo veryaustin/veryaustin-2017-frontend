@@ -1,20 +1,3 @@
-exports[`Contact Reducer should handle the CONTACT_FETCH action 1`] = `
-Object {
-  "contactInfo": Array [
-    Object {
-      "icon_url": "http://test_contact_1.com",
-      "site_url": "test@contact_1.com",
-      "title": "contact_1",
-    },
-    Object {
-      "icon_url": "http://test_contact_2.com",
-      "site_url": "test@contact_2.com",
-      "title": "contact_2",
-    },
-  ],
-  "slogan": "Test Contact Slogan",
-  "title": "Test Contact Title",
-}
-`;
+exports[`Contact Reducer should handle the CONTACT_FETCH action 1`] = `Object {}`;
 
 exports[`Contact Reducer should return the initial state 1`] = `Object {}`;

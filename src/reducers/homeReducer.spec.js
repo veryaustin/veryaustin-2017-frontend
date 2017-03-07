@@ -12,12 +12,12 @@ describe('Home Reducer',() => {
 
     const testData = {
       image_url: 'test_url',
-      name: 'test_name',
-      slogan: 'test_slogan'
+      title: 'test_name',
+      caption: 'test_slogan'
     };
 
     const action = {
-      type: types.DATA_FETCH,
+      type: types.HOME_FETCH,
       payload: {data: testData}
     };
     

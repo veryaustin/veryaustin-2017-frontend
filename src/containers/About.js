@@ -1,7 +1,8 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchData} from '../actions/dataActions';
+import {fetchAbout} from '../actions/aboutActions';
+import Banner from '../components/Banner';
 
 class About extends Component {
   // Ajax call to get API data before the component mounts
@@ -11,13 +12,9 @@ class About extends Component {
   
   render() {
     // Destructure the about object
-    const {title, intro, photo} = this.props.about;
+    const {title, intro, image_url} = this.props.about;
     return (
-      <div id="about">
-        <h1>{title}</h1>
-        <h3>{intro}</h3>
-        <img src={photo} />
-      </div>
+      <Banner title={title} intro={intro} image_url={image_url} dark />
     ); 
   }
 }
@@ -29,7 +26,7 @@ function mapStateToProps({about}) {
 
 // Bind the actions and dispatch them
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchAbout: fetchData}, dispatch);
+  return bindActionCreators({fetchAbout}, dispatch);
 }
 
 // About Props Validation

@@ -1,8 +1,8 @@
 exports[`Home Reducer should handle the HOME_FETCH action 1`] = `
 Object {
+  "caption": "test_slogan",
   "image_url": "test_url",
-  "name": "test_name",
-  "slogan": "test_slogan",
+  "title": "test_name",
 }
 `;
 

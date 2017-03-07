@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchData} from '../actions/dataActions';
+import {fetchHome} from '../actions/homeActions';
 import Banner from '../components/Banner';
 
 class Home extends Component {
@@ -11,21 +11,21 @@ class Home extends Component {
   }
   render() {
     // Destructure the home object
-    const {name, slogan, image_url} = this.props.home;
+    const {title, caption, image_url} = this.props.home;
     return(
-      <Banner name={name} slogan={slogan} image_url={image_url} right ></Banner>
+      <Banner title={title} caption={caption} image_url={image_url} right />
     );
   }
 }
 
 // Map State To Props 
-function mapStateToProps({home},) {
+function mapStateToProps({home}) {
   return {home};
 }
 
 // Bind actions and dispatch them
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchHome: fetchData}, dispatch);
+  return bindActionCreators({fetchHome}, dispatch);
 }
 
 //  Home Props Validation

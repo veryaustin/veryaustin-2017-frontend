@@ -1,8 +1,9 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {fetchData} from '../actions/dataActions';
+import {fetchWork} from '../actions/workActions';
 import {Link} from 'react-router';
+import Banner from '../components/Banner';
 
 class Work extends Component {
   // Ajax call to get API data before the component mounts
@@ -28,7 +29,7 @@ class Work extends Component {
   // Map over the returned data from the action creator and format it on the page
   render() {
     // Destructure the work object
-    const {title, slogan, projects} = this.props.work;
+    const {title, caption, image_url, projects} = this.props.work;
     if (!projects) {
       return (
         <div>Loading</div>
@@ -36,8 +37,7 @@ class Work extends Component {
     }
     return (
       <div id="work">
-        <h1>{title}</h1>
-        <h3>{slogan}</h3>
+        <Banner title={title} image_url = {image_url} caption={caption} />
         {projects.map(this.renderWork)}
       </div>
     );
@@ -51,7 +51,7 @@ function mapStateToProps({work}) {
 
 // Bind the actions and dispatch them
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchWork: fetchData}, dispatch);
+  return bindActionCreators({fetchWork}, dispatch);
 }
 
 // Work Props Validation

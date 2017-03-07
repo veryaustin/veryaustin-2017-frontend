@@ -28,7 +28,7 @@ describe('Contact Reducer',() => {
     };
 
     const action = {
-      type: types.DATA_FETCH,
+      type: types.CONTACT_FETCH,
       payload: {data: testData}
     };
     

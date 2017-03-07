@@ -4,8 +4,8 @@ const {contact} = initialState;
 
 export default function(state = contact, action) {
   switch(action.type) {
-    case actions.DATA_FETCH:
-      return Object.assign(action.payload.data, state);
+    case actions.CONTACT_FETCH:
+      return {...state, ...action.payload.data};
     default:
       return state;
   }
