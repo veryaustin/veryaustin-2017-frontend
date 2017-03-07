@@ -32,6 +32,7 @@ const NavLinkStyles = css`
     border-bottom: 1px solid #C5C5C5;
     &:last-child {
       border-bottom: none;
+      padding-bottom: 0px;
     }
   }
 `;
