@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchWork} from '../actions/workActions';
 import {Link} from 'react-router';
 import Banner from '../components/Banner';
-import Tools from '../components/Tools';
+import Section from '../components/Section';
 
 class Work extends Component {
   // Ajax call to get API data before the component mounts
@@ -14,18 +14,9 @@ class Work extends Component {
 
   // Helper function to render the various sections
   renderWork(workData) {
-    const {title, summary, description, site_url, repo_url, image_url, tools} = workData;
-
+    const {key, title, summary, description, site_url, repo_url, image_url, tools} = workData;
     return (
-      <div key={title}>
-        <h1><Link to={site_url}>{title}</Link></h1>
-        <h3>{summary}</h3>
-        <p>{description}</p>
-        <img src={image_url}/>
-        <button><Link to={site_url}>Visit Site</Link></button>
-        <button><Link to={repo_url}>Visit Repo</Link></button>
-        <Tools tools={tools}/>
-     </div>
+      <Section key={key} title={title} summary={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} tools={tools} dark/>
     );
   }
 

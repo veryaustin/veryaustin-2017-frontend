@@ -4,6 +4,7 @@ import {Link} from 'react-router';
 
 // Container for all tool items
 const ToolList = styled.div`
+  margin-bottom: -3px;
 `;
 
 // Container for individual tool item
@@ -11,7 +12,7 @@ const ToolItem = styled.div`
   display: inline-block;
   width: 10vw;
   height: 10vw;
-  margin-top: -3px;
+  margin-top: -4px;
   background-color: ${props => props.color};
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 50vw;
@@ -21,6 +22,16 @@ const ToolItem = styled.div`
     width: 20vw;
     height: 20vw;
   }
+`;
+
+// Tool title styles
+const ToolTitle = styled.h2`
+  font-family: Volte Sans Rounded;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: .75em;
+  letter-spacing: -1px;
+  padding: 15px 40px;
 `;
 
 // Logo image for an individual tool item
@@ -39,6 +50,7 @@ const Tools = ({tools}) => {
   }
   return(
     <ToolList>
+      <ToolTitle>Tools & Technology:</ToolTitle>
       {tools.map((tool, key) =>
       <Link key={key} to={tool.site_url}>
         <ToolItem color={tool.background_color}>

@@ -84,8 +84,7 @@ const Container = styled.div`
   }
 `;
 
-const Banner = (props) => {
-  const {title, caption} = props;
+const Banner = ({title, caption, ...props}) => {
   return (
     <Header {...props}>
       <Container {...props}>

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchAbout} from '../actions/aboutActions';
 import Banner from '../components/Banner';
+import Section from '../components/Section';
 
 class About extends Component {
   // Ajax call to get API data before the component mounts
@@ -12,9 +13,12 @@ class About extends Component {
   
   render() {
     // Destructure the about object
-    const {title, intro, image_url} = this.props.about;
+    const {title, caption, image_url, banner_url, content, tools } = this.props.about;
     return (
-      <Banner title={title} intro={intro} image_url={image_url} dark />
+      <div>
+        <Banner title={title} caption={caption} image_url={banner_url} dark />
+        <Section description={content} image_url={image_url} tools={tools} />
+      </div>
     ); 
   }
 }

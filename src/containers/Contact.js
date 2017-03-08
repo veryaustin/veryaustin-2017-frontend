@@ -31,7 +31,9 @@ class Contact extends Component {
       );
     }
     return (
-      <Banner title={title} caption={caption} />
+      <div id="contact">
+        <Banner title={title} caption={caption} />
+      </div>
     );
   }
 }

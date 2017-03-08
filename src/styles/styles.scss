@@ -24,3 +24,15 @@ a {
   text-decoration: none;
   color: $highlight;
 }
+
+// Styling Every Other Work Section
+#work {
+  section:nth-child(even) {
+    background: #212425;
+    color: #ffffff;
+  };
+  section:nth-child(odd) {
+    background: #ffffff;
+    color: #212425;
+  };
+}
