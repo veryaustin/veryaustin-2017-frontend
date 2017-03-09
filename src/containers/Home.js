@@ -11,9 +11,9 @@ class Home extends Component {
   }
   render() {
     // Destructure the home object
-    const {title, caption, image_url} = this.props.home;
+    const {title, caption, banner_url} = this.props.home;
     return(
-      <Banner title={title} caption={caption} image_url={image_url} right />
+      <Banner title={title} caption={caption} banner_url={banner_url} right />
     );
   }
 }

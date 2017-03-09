@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 
 const Header = styled.header`
-  background: linear-gradient(${props => props.dark ? "rgba(00,00,00, .75), rgba(00,00,00, .75)" : "rgba(00,00,00, .0), rgba(00,00,00, .0)"}), url(${props => props.image_url}) no-repeat center center;
+  background: linear-gradient(${props => props.dark ? "rgba(00,00,00, .75), rgba(00,00,00, .75)" : "rgba(00,00,00, .0), rgba(00,00,00, .0)"}), url(${props => props.banner_url}) no-repeat center center;
   background-size: ${props => props.left ? "50% 50%" : props.right ? "50% 50%" : "cover"};
   background-position: ${props => props.left ? "115% center" : props.right ? "-15% center" : "center"};
   height: 100vh;

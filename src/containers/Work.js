@@ -23,7 +23,7 @@ class Work extends Component {
   // Map over the returned data from the action creator and format it on the page
   render() {
     // Destructure the work object
-    const {title, caption, image_url, projects} = this.props.work;
+    const {title, caption, banner_url, projects} = this.props.work;
     if (!projects) {
       return (
         <div>Loading</div>
@@ -31,7 +31,7 @@ class Work extends Component {
     }
     return (
       <div key={title} id="work">
-        <Banner title={title} image_url = {image_url} caption={caption} />
+        <Banner title={title} banner_url = {banner_url} caption={caption} />
         {projects.map(this.renderWork)}
       </div>
     );
