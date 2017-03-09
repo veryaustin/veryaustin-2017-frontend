@@ -7,7 +7,7 @@ const SectionItem = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     flex-wrap: wrap-reverse;
   }
 `;
@@ -37,8 +37,21 @@ const SectionColumn = styled.div`
   overflow: hidden;
   @media only screen and (max-width: 768px) {
     width: 100%;
+    padding: 20px;
     text-align: center;
+
   }
+`;
+
+const SectionColumnLeft = styled(SectionColumn)`
+    @media only screen and (max-width: 768px) {
+      order: 1;
+    }
+`;
+const SectionColumnRight = styled(SectionColumn)`
+    @media only screen and (max-width: 768px) {
+      order: 2;
+    }
 `;
 
 const SectionImage = styled.img`
@@ -46,24 +59,31 @@ const SectionImage = styled.img`
   margin: 0 0 0 130px;
   @media only screen and (max-width: 768px) {
     width: 100%;
-    margin: 25px 0;
+    margin: 0;
   }
 `;
+
+const SectionTools = styled(Tools)`
+  @media only screen and (max-width: 768px) {
+    order: 3;
+  }
+`;
+
 
 const Section = (props) => {
   // Destructure Props
   const {title, summary, description, image_url, tools} = props;
   return(
     <SectionItem {...props}>
-      <SectionColumn>
+      <SectionColumnLeft>
         <SectionTitle>{title}</SectionTitle>
         <SectionSummary>{summary}</SectionSummary>
         <SectionDescription>{description}</SectionDescription>
-      </SectionColumn>
-      <SectionColumn>
+      </SectionColumnLeft>
+      <SectionColumnRight>
         <SectionImage src={image_url}/>
-      </SectionColumn>
-      <Tools tools={tools}/>
+      </SectionColumnRight>
+      <SectionTools tools={tools}/>
     </SectionItem>
   );
 };

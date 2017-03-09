@@ -4,15 +4,16 @@ import {Link} from 'react-router';
 
 // Container for all tool items
 const ToolList = styled.div`
-  margin-bottom: -3px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 // Container for individual tool item
 const ToolItem = styled.div`
-  display: inline-block;
   width: 10vw;
   height: 10vw;
-  margin-top: -4px;
   background-color: ${props => props.color};
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     width: 50vw;
@@ -50,7 +51,7 @@ const Tools = ({tools}) => {
   }
   return(
     <ToolList>
-      <ToolTitle>Tools & Technology:</ToolTitle>
+
       {tools.map((tool, key) =>
       <Link key={key} to={tool.site_url}>
         <ToolItem color={tool.background_color}>

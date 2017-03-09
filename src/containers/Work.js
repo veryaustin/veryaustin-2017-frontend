@@ -30,7 +30,7 @@ class Work extends Component {
       );
     }
     return (
-      <div id="work">
+      <div key={title} id="work">
         <Banner title={title} image_url = {image_url} caption={caption} />
         {projects.map(this.renderWork)}
       </div>
