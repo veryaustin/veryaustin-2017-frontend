@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
-import Tools from './Tools';
+import ToolList from './ToolList';
 
 // Section Styles
 const SectionItem = styled.section`
@@ -72,7 +72,7 @@ const SectionImage = styled.img`
 `;
 
 // Order styles for the Tools list on mobile
-const SectionTools = styled(Tools)`
+const SectionTools = styled(ToolList)`
   @media only screen and (max-width: 768px) {
     order: 3;
   }

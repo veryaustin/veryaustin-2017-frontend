@@ -14,9 +14,9 @@ class Work extends Component {
 
   // Helper function to render the various sections
   renderWork(workData) {
-    const {key, title, summary, description, site_url, repo_url, image_url, tools} = workData;
+    const {title, summary, description, site_url, repo_url, image_url, tools} = workData;
     return (
-      <Section key={key} title={title} summary={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} tools={tools} dark/>
+      <Section key={title} title={title} summary={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} tools={tools} dark/>
     );
   }
 
@@ -30,8 +30,8 @@ class Work extends Component {
       );
     }
     return (
-      <div key={title} id="work">
-        <Banner title={title} banner_url = {banner_url} caption={caption} />
+      <div id="work">
+        <Banner title={title} banner_url={banner_url} caption={caption} />
         {projects.map(this.renderWork)}
       </div>
     );
@@ -51,7 +51,21 @@ function mapDispatchToProps(dispatch) {
 // Work Props Validation
 Work.propTypes = {
   fetchWork: PropTypes.func,
-  work: PropTypes.object,
+  work: React.PropTypes.shape({
+    title: PropTypes.string,
+    banner_url: PropTypes.string,
+    caption: PropTypes.string,
+    projects: PropTypes.array
+  }),
+  projects: PropTypes.shape({
+    title: PropTypes.string, 
+    summary: PropTypes.string, 
+    description: PropTypes.string,
+    site_url: PropTypes.string,
+    repo_url: PropTypes.string, 
+    image_url: PropTypes.string, 
+    tools: PropTypes.array
+  }),
   route: PropTypes.object
 };
 
