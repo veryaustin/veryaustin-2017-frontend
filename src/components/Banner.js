@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 
+// Header Styles
 const Header = styled.header`
   background: linear-gradient(${props => props.dark ? "rgba(00,00,00, .75), rgba(00,00,00, .75)" : "rgba(00,00,00, .0), rgba(00,00,00, .0)"}), url(${props => props.banner_url}) no-repeat center center;
   background-size: ${props => props.left ? "50% 50%" : props.right ? "50% 50%" : "cover"};
@@ -12,6 +13,7 @@ const Header = styled.header`
   }
 `;
 
+// Header Title Styles
 const Title = styled.h1`
   font-family: Volte Sans Rounded;
   font-weight: 600;
@@ -41,6 +43,7 @@ const Title = styled.h1`
   }
 `;
 
+// Header Caption Styles
 const Caption = styled.h3`
   font-family: Volte Sans Rounded;
   font-weight: 300;
@@ -68,6 +71,7 @@ const Caption = styled.h3`
   }
 `;
 
+// Header Container Styles
 const Container = styled.div`
   width: 100%;
   text-align: ${props => props.left ? "left" : props => props.right ? "right" : "center"};
@@ -84,6 +88,7 @@ const Container = styled.div`
   }
 `;
 
+// Banner Component
 const Banner = ({title, caption, ...props}) => {
   return (
     <Header {...props}>
