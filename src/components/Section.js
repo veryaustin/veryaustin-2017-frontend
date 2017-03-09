@@ -12,6 +12,7 @@ const SectionItem = styled.section`
   }
 `;
 
+// Title styles for section
 const SectionTitle = styled.h2`
   font-family: Volte Sans Rounded;
   font-weight: 600;
@@ -20,17 +21,20 @@ const SectionTitle = styled.h2`
   letter-spacing: -1px;
 `;
 
+// Summary styles for section
 const SectionSummary = styled.h3`
   font-weight: 400;
   font-size: 1.125em;
 `;
 
+// Description styles for for section
 const SectionDescription = styled.p`
   font-weight: 300;
   line-height: 1.4em;
   text-align: justify;
 `;
 
+// Column styles for individual column
 const SectionColumn = styled.div`
   width: 50%;
   padding: 45px 40px;
@@ -43,17 +47,21 @@ const SectionColumn = styled.div`
   }
 `;
 
+// Styles that modify column styles for Left Column
 const SectionColumnLeft = styled(SectionColumn)`
     @media only screen and (max-width: 768px) {
       order: 1;
     }
 `;
+
+// Styles that modify column styles for Right Column
 const SectionColumnRight = styled(SectionColumn)`
     @media only screen and (max-width: 768px) {
       order: 2;
     }
 `;
 
+// Image styles for screenshot images
 const SectionImage = styled.img`
   width: 120%;
   margin: 0 0 0 130px;
@@ -63,13 +71,14 @@ const SectionImage = styled.img`
   }
 `;
 
+// Order styles for the Tools list on mobile
 const SectionTools = styled(Tools)`
   @media only screen and (max-width: 768px) {
     order: 3;
   }
 `;
 
-
+// Section Component
 const Section = (props) => {
   // Destructure Props
   const {title, summary, description, image_url, tools} = props;
