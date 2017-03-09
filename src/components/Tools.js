@@ -33,6 +33,11 @@ const ToolTitle = styled.h2`
   line-height: .75em;
   letter-spacing: -1px;
   padding: 15px 40px;
+  @media only screen and (max-width: 768px) {
+    font-size: 1.5em;
+    padding-left: 20px; 
+    padding-bottom: 0;
+  }
 `;
 
 // Logo image for an individual tool item
@@ -51,7 +56,7 @@ const Tools = ({tools}) => {
   }
   return(
     <ToolList>
-
+      <ToolTitle>Tools & Technologies:</ToolTitle>
       {tools.map((tool, key) =>
       <Link key={key} to={tool.site_url}>
         <ToolItem color={tool.background_color}>
