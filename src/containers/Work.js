@@ -2,7 +2,6 @@ import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchWork} from '../actions/workActions';
-import {Link} from 'react-router';
 import Banner from '../components/Banner';
 import Section from '../components/Section';
 

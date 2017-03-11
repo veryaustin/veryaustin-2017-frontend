@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchContact} from '../actions/contactActions';
 import Banner from '../components/Banner';
+import Wrapper from '../components/Wrapper';
+import Grid from '../components/Grid';
 
 class Contact extends Component {
   // Ajax call to get API data before the component mounts
@@ -10,18 +12,6 @@ class Contact extends Component {
     this.props.fetchContact(this.props.route.path);
   }
   
-  // Helper function to render the various ways to contact
-  renderContacts(contactInfoData) {
-    // Destructure the contactInfo array
-    const {icon_url, site_url} = contactInfoData;
-    return (
-      <div key={icon_url}>
-        <h5>{icon_url}</h5>
-        <h5>{site_url}</h5>
-      </div>
-    );
-  }
-
   render() {
     // Destructure the contact object
     const {title, caption, contactInfo} = this.props.contact;
@@ -33,6 +23,7 @@ class Contact extends Component {
     return (
       <div id="contact">
         <Banner title={title} caption={caption} />
+        <Wrapper><Grid items={contactInfo}/></Wrapper>
       </div>
     );
   }

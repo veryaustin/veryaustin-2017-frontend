@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
-import ToolList from './ToolList';
+import Grid from './Grid';
 
 // Section Styles
 const SectionItem = styled.section`
@@ -13,12 +13,28 @@ const SectionItem = styled.section`
 `;
 
 // Title styles for section
-const SectionTitle = styled.h2`
+const SectionTitle = styled.h1`
   font-family: Volte Sans Rounded;
   font-weight: 600;
   font-size: 2em;
   line-height: .75em;
   letter-spacing: -1px;
+`;
+
+// Technology title styles
+const SectionTechnology = styled.h2`
+  font-family: Volte Sans Rounded;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: .75em;
+  letter-spacing: -1px;
+  padding: 15px 40px;
+  @media only screen and (max-width: 768px) {
+    order: 4;
+    font-size: 1.5em;
+    padding-left: 20px; 
+    padding-bottom: 0;
+  }
 `;
 
 // Summary styles for section
@@ -50,14 +66,14 @@ const SectionColumn = styled.div`
 // Styles that modify column styles for Left Column
 const SectionColumnLeft = styled(SectionColumn)`
     @media only screen and (max-width: 768px) {
-      order: 1;
+      order: 2;
     }
 `;
 
 // Styles that modify column styles for Right Column
 const SectionColumnRight = styled(SectionColumn)`
     @media only screen and (max-width: 768px) {
-      order: 2;
+      order: 3;
     }
 `;
 
@@ -66,22 +82,28 @@ const SectionImage = styled.img`
   width: 120%;
   margin: 0 0 0 130px;
   @media only screen and (max-width: 768px) {
+    order: 1;
     width: 100%;
     margin: 0;
   }
 `;
 
-// Order styles for the Tools list on mobile
-const SectionTools = styled(ToolList)`
+// Order styles for the Grid list on mobile
+const SectionGrid = styled(Grid)`
   @media only screen and (max-width: 768px) {
-    order: 3;
+    order: 5;
   }
 `;
 
 // Section Component
 const Section = (props) => {
   // Destructure Props
-  const {title, summary, description, image_url, tools} = props;
+  const {title, summary, description, image_url, items} = props;
+   if (!items) {
+    return (
+      <div>Loading</div>
+    );
+  }
   return(
     <SectionItem {...props}>
       <SectionColumnLeft>
@@ -92,7 +114,8 @@ const Section = (props) => {
       <SectionColumnRight>
         <SectionImage src={image_url}/>
       </SectionColumnRight>
-      <SectionTools tools={tools}/>
+      <SectionTechnology>Tools & Technologies:</SectionTechnology>
+      <SectionGrid items={items} />
     </SectionItem>
   );
 };
@@ -105,7 +128,7 @@ Section.propTypes = {
   image_url: PropTypes.string.isRequired,
   site_url: PropTypes.string,
   repo_url: PropTypes.string,
-  tools: PropTypes.array
+  items: PropTypes.array
 };
 
 export default Section;
