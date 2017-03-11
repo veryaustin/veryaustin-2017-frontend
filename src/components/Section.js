@@ -105,7 +105,7 @@ const Section = (props) => {
     );
   }
   return(
-    <SectionItem {...props}>
+    <SectionItem>
       <SectionColumnLeft>
         <SectionTitle>{title}</SectionTitle>
         <SectionSummary>{summary}</SectionSummary>
@@ -115,7 +115,7 @@ const Section = (props) => {
         <SectionImage src={image_url}/>
       </SectionColumnRight>
       <SectionTechnology>Tools & Technologies:</SectionTechnology>
-      <SectionGrid items={items} />
+      <SectionGrid gridItems={items} />
     </SectionItem>
   );
 };

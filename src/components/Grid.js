@@ -10,40 +10,27 @@ const GridList = styled.div`
   flex-wrap: wrap;
 `;
 
+
 // Component to return a div containing all grid items
+
 const Grid = (props) => {
-  if (!props.items){
+  const {gridItems} = props;
+  if (!gridItems){
     return (
       <div>Loading</div>
     );
   }
   return (
     <GridList>
-      {props.items.map((item, index) => 
-        <GridItem key={index} item={item} />
+      {gridItems.map((gridItem, index) =>
+        <GridItem key={index} gridItem={gridItem} />
       )}
     </GridList>
   );
 };
 
 Grid.propTypes = {
-  items: PropTypes.array
+  gridItem: PropTypes.array
 };
 
 export default Grid;
-
-// const Grid = (props) => {
-//   const List = props.items.map((item, index) => {
-//     return <GridItem key={index} item={item}/>
-//   });
-
-//   return(
-//     <GridList>{List}</GridList>
-//   );
-// };
-
-// Grid.propTypes = {
-//   items: PropTypes.array
-// }
-
-// export default Grid;

@@ -26,7 +26,7 @@ const ItemImage = styled.img`
 
 // GridItem Component
 const GridItem = (props) => {
-  const {site_url, background_color, logo_url} = props.item;
+  const {site_url, background_color, logo_url} = props.gridItem;
   return (
     <Link to={site_url}>
       <Item color={background_color}>
@@ -38,7 +38,7 @@ const GridItem = (props) => {
 
 // GridItem Props Validation
 GridItem.propTypes = {
-  item: PropTypes.object
+  gridItem: PropTypes.object
 };
 
 export default GridItem;

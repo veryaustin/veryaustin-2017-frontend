@@ -23,7 +23,7 @@ class Contact extends Component {
     return (
       <div id="contact">
         <Banner title={title} caption={caption} />
-        <Wrapper><Grid items={contactInfo}/></Wrapper>
+        <Wrapper><Grid gridItems={contactInfo}/></Wrapper>
       </div>
     );
   }

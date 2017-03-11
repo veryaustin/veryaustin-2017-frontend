@@ -15,7 +15,7 @@ class Work extends Component {
   renderWork(workData) {
     const {title, summary, description, site_url, repo_url, image_url, tools} = workData;
     return (
-      <Section key={title} title={title} summary={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} tools={tools} dark/>
+      <Section key={title} title={title} summary={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools}/>
     );
   }
 
