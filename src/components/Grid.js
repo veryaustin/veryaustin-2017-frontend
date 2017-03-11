@@ -30,7 +30,8 @@ const Grid = (props) => {
 };
 
 Grid.propTypes = {
-  gridItem: PropTypes.array
+  gridItems: PropTypes.array,
+  gridItem: PropTypes.object
 };
 
 export default Grid;
