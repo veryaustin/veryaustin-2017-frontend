@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Grid from './Grid';
 
 // Section Styles
-const SectionItem = styled.section`
+const StyledSection = styled.section`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -13,7 +13,7 @@ const SectionItem = styled.section`
 `;
 
 // Title styles for section
-const SectionTitle = styled.h1`
+const Title = styled.h1`
   font-family: "Volte Sans Rounded";
   font-weight: 600;
   font-size: 2em;
@@ -22,20 +22,20 @@ const SectionTitle = styled.h1`
 `;
 
 // Summary styles for section
-const SectionSummary = styled.h3`
+const Summary = styled.h3`
   font-weight: 400;
   font-size: 1.125em;
 `;
 
 // Description styles for for section
-const SectionDescription = styled.p`
+const Description = styled.p`
   font-weight: 300;
   line-height: 1.4em;
   text-align: justify;
 `;
 
 // Column styles for individual column
-const SectionColumn = styled.div`
+const Column = styled.div`
   width: 50%;
   padding: 45px 40px;
   overflow: hidden;
@@ -47,21 +47,21 @@ const SectionColumn = styled.div`
 `;
 
 // Styles that modify column styles for Left Column
-const SectionColumnLeft = styled(SectionColumn)`
+const ColumnLeft = styled(Column)`
     @media only screen and (max-width: 768px) {
       order: 3;
     }
 `;
 
 // Styles that modify column styles for Right Column
-const SectionColumnRight = styled(SectionColumn)`
+const ColumnRight = styled(Column)`
     @media only screen and (max-width: 768px) {
       order: 2;
     }
 `;
 
 // Image styles for screenshot images
-const SectionFeaturedImage = styled.img`
+const FeaturedImage = styled.img`
   width: 120%;
   margin: 0 0 0 130px;
   @media only screen and (max-width: 768px) {
@@ -72,33 +72,32 @@ const SectionFeaturedImage = styled.img`
 `;
 
 // Order styles for the Grid list on mobile
-const SectionGrid = styled(Grid)`
+const StyledGrid = styled(Grid)`
   @media only screen and (max-width: 768px) {
     order: 4;
   }
 `;
 
 // Section Component
-const Section = (props) => {
+const Section = ({title, caption, description, image_url, label, items}) => {
   // Destructure Props
-  const {title, caption, description, image_url, label, items} = props;
    if (!items) {
     return (
       <div>Loading</div>
     );
   }
   return(
-    <SectionItem>
-      <SectionColumnLeft>
-        <SectionTitle>{title}</SectionTitle>
-        <SectionSummary>{caption}</SectionSummary>
-        <SectionDescription>{description}</SectionDescription>
-      </SectionColumnLeft>
-      <SectionColumnRight>
-        <SectionFeaturedImage src={image_url}/>
-      </SectionColumnRight>
-      <SectionGrid gridItems={items} label={label || "Technology & Tools:"} />
-    </SectionItem>
+    <StyledSection>
+      <ColumnLeft>
+        <Title>{title}</Title>
+        <Summary>{caption}</Summary>
+        <Description>{description}</Description>
+      </ColumnLeft>
+      <ColumnRight>
+        <FeaturedImage src={image_url}/>
+      </ColumnRight>
+      <StyledGrid gridItems={items} label={label || "Technology & Tools:"} />
+    </StyledSection>
   );
 };
 

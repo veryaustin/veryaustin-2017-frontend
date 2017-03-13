@@ -15,7 +15,6 @@ const Header = styled.header`
 
 // Column styles for individual column
 const Column = styled.div`
-
   width: ${props => props.left || props.right ? "50%" : "100%"};
   overflow: hidden;
   position: relative;
@@ -63,7 +62,7 @@ const Title = styled.h1`
 // Header Caption Styles
 const Caption = styled.h3`
   font-family: "Volte Sans Rounded";
-  font-weight: 300
+  font-weight: 300;
   font-size: 1.125em;
   text-align: ${props => props.left ? "right" : props.right ? "left" : "center"};
   color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
