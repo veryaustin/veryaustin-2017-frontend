@@ -16,7 +16,7 @@ class About extends Component {
     const {title, caption, image_url, banner_url, content, tools } = this.props.about;
     return (
       <div>
-        <Banner title={title} caption={caption} banner_url={banner_url} dark />
+        <Banner title={title} caption={caption} featured_image={banner_url} dark />
         <Section description={content} image_url={image_url} tools={tools} />
       </div>
     ); 

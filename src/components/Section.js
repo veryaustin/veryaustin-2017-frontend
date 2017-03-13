@@ -59,7 +59,6 @@ const SectionColumn = styled.div`
     width: 100%;
     padding: 20px;
     text-align: center;
-
   }
 `;
 
@@ -125,7 +124,7 @@ Section.propTypes = {
   title: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  image_url: PropTypes.string.isRequired,
+  image_url: PropTypes.string,
   site_url: PropTypes.string,
   repo_url: PropTypes.string,
   items: PropTypes.array

@@ -50,6 +50,13 @@ const IndexNavLink = styled(IndexLink)`
   ${NavLinkStyles}
 `;
 
+// External Site Arrow
+const NavOutIcon = styled.i`
+  color: #4A4A4A;
+  font-size: 14px;
+  padding: 0 0 0 8px;
+`;
+
 // Navigation Component
 class Navigation extends Component {
 
@@ -83,7 +90,7 @@ class Navigation extends Component {
         <IndexNavLink to="/" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Home</IndexNavLink>
         <NavLink to="work" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Work</NavLink>
         <NavLink to="about" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>About</NavLink>
-        <NavLink href="http://writing.veryaustin.com" className="">Writing</NavLink>
+        <NavLink href="http://writing.veryaustin.com" className="">Writing<NavOutIcon className="fa fa-arrow-circle-o-right"/></NavLink>
         <NavLink to="contact" activeStyle={{ textDecoration: "underline"}} onClick={this.handleNavClick}>Contact</NavLink>
       </MainNavigation>
     </div>
