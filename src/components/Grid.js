@@ -10,11 +10,24 @@ const GridList = styled.div`
   flex-wrap: wrap;
 `;
 
+// Grid Label
+const GridLabel = styled.h2`
+  width: 100%;
+  padding: 15px 40px;
+  font-family: "Volte Sans Rounded";
+  font-weight: 600;
+  font-size: 2em;
+  line-height: .75em;
+  letter-spacing: -1px;
+  @media only screen and (max-width: 768px) {
+    font-size: 1.5em;
+    padding: 10px 0 0 20px;
+  }
+`;
 
 // Component to return a div containing all grid items
-
 const Grid = (props) => {
-  const {gridItems} = props;
+  const {gridItems, label} = props;
   if (!gridItems){
     return (
       <div>Loading</div>
@@ -22,6 +35,7 @@ const Grid = (props) => {
   }
   return (
     <GridList>
+      <GridLabel>{label}</GridLabel>
       {gridItems.map((gridItem, index) =>
         <GridItem key={index} gridItem={gridItem} />
       )}
@@ -29,9 +43,11 @@ const Grid = (props) => {
   );
 };
 
+// Grid Props Validation
 Grid.propTypes = {
   gridItems: PropTypes.array,
-  gridItem: PropTypes.object
+  gridItem: PropTypes.object,
+  label: PropTypes.string
 };
 
 export default Grid;

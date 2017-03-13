@@ -6,169 +6,179 @@ const Header = styled.header`
   background: linear-gradient(${props => props.dark ? "rgba(00,00,00, .75), rgba(00,00,00, .75)" : "rgba(00,00,00, .0), rgba(00,00,00, .0)"}), 
               url(${props => props.featured_image && (props.left || props.right) ? "none" : props.featured_image }) no-repeat center center;
   background-size: cover;
-  background-position: ${props => props.left ? "115% center" : props.right ? "-15% center" : "center"};
-  height: 100vh;
+  background-position: center;
+  height: calc(100vh - 130px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 `;
 
 // Column styles for individual column
-const HeaderColumn = styled.div`
-  width: ${props => props.left ? "50%" : props.right ? "50%" : "100%"};
+const Column = styled.div`
+
+  width: ${props => props.left || props.right ? "50%" : "100%"};
   overflow: hidden;
-  padding: 25px;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-
-    text-align: center;
-  }
-`;
-
-const HeaderColumnLeft = styled(HeaderColumn)`
-  
-`;
-
-const HeaderColumnRight = styled(HeaderColumn)`
-
-`;
-
-const HeaderFeaturedImage = styled.img`
   position: relative;
-  top: 25%;
-  width: 120%;
-  margin: ${props => props.left ? "0 0 0 -20%" : props.right ? "0 -20% 0 0" : "inherit"};
+  padding: 25px;
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 100%;
+    overflow: auto;
+  }
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 // Header Title Styles
 const Title = styled.h1`
-  font-family: Volte Sans Rounded;
+  font-family: "Volte Sans Rounded";
   font-weight: 600;
   font-size: 4em;
-  color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
   text-align: ${props => props.left ? "right" : props.right ? "left" : "center"};
-  margin: 0;
   line-height: .75em;
   letter-spacing: -2.91px;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    font-size: 3.25em;
-    float: none;
+  color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
+  margin: 15px 0;
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    font-size: 3em;
+    text-align: center;
   }
-  @media only screen and (max-width: 768px) {
-    float: none;
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    text-align: center;
   }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-    font-size: 4.5em;
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
+    text-align: center;
   }
-  @media only screen and (min-width: 1024px) and (max-width: 1439px) {
-    font-size: 5em;
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    font-size: 4.2em;
   }
-  @media only screen and (min-width: 1440px) and (max-width: 1919px) {
-    font-size: 6em;
+  @media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    font-size: 5.9em;
   }
-  @media only screen and (min-width: 1920px) {
-    font-size: 9em;
+  @media only screen and (min-width: 1921px) {
+    font-size: 7em;
   }
 `;
 
 // Header Caption Styles
 const Caption = styled.h3`
-  font-family: Volte Sans Rounded;
-  font-weight: 300;
+  font-family: "Volte Sans Rounded";
+  font-weight: 300
   font-size: 1.125em;
-  color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
   text-align: ${props => props.left ? "right" : props.right ? "left" : "center"};
-  margin: 20px 0;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
+  margin: 15px 0;
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
     font-size: 1em;
-    float: none;
+    text-align: center;
   }
-  @media only screen and (max-width: 767px) {
-    float: none;
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    text-align: center;
   }
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  @media only screen and (min-width: 769px) and (max-width: 1024px) {
     font-size: 1.225em;
+    text-align: center;
   }
-  @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  @media only screen and (min-width: 1025px) and (max-width: 1440px) {
     font-size: 1.40625em;
   }
-  @media only screen and (min-width: 1440px) and (max-width: 1919px) {
+  @media only screen and (min-width: 1441px) and (max-width: 1920px) {
     font-size: 1.6875em;
   }
-  @media only screen and (min-width: 1920px) {
+  @media only screen and (min-width: 1921px) {
     font-size: 2.53125em;
   }
 `;
 
-const HeaderTitleContainer = styled.div`
+// Header Title & Caption Container For Styles
+const TitleContainer = styled.div`
+  width: 100%;
+  padding-top: 15%;
   position: relative;
-  top: 40%;
+  top: 25%;
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    padding-top: 0;
+    text-align: center;
+  }
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    top: 40%;
+    padding-top: 0;
+  }
+  @media only screen and (min-width: 1921px) {
+    padding-top: 20%;
+  }
 `;
 
-// Header Container Styles
-// const Container = styled.div`
-//   width: 100%;
-//   text-align: ${props => props.left ? "left" : props => props.right ? "right" : "center"};
-//   padding: ${props => props.left ? "0 0 0 2.625em" : props => props.right ? "0 2.625em 0 0" : "0 0 0 0"};
-//   position: relative;
-//   top: 45%;
-//   @media only screen and (max-width: 768px) {
-//     text-align: center;
-//     width: 100%;
-//     top: 13%;
-//     float: none;
-//     margin: 0 auto 0 auto;
-//     padding: 0;
-//   }
-// `;
+// Header Featured Image Styles
+const FeaturedImage = styled.img`
+  width: 100%;
+  margin: ${props => props.left ? "0 0 0 -20%" : props.right ? "0 0 0 20%" : "inherit"};
+  position: relative;
+  top: 25%;
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
+    width: 100%;
+    margin: 0;
+    top: 0;
+  }
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
+    width: 100%;
+    margin: 0;
+    top: 0;
+  }
+`;
 
 // Banner Component
 const Banner = (props) => {
+  const {title, caption, featured_image} = props;
   if (props.left) {
     return (
     <Header {...props}>
-      <HeaderColumnLeft {...props}>
-        <HeaderFeaturedImage {...props} src={props.featured_image}/>
-      </HeaderColumnLeft>
-      <HeaderColumnRight {...props}>
-        <HeaderTitleContainer {...props}>
-          <Title {...props}>{props.title}</Title>
-          <Caption {...props}>{props.caption}</Caption>
-        </HeaderTitleContainer>
-      </HeaderColumnRight>
+      <Column {...props}>
+        <FeaturedImage {...props} src={featured_image}/>
+      </Column>
+      <Column {...props}>
+        <TitleContainer {...props}>
+          <Title {...props}>{title}</Title>
+          <Caption {...props}>{caption}</Caption>
+        </TitleContainer>
+      </Column>
     </Header>
-    )
+    );
   } else if (props.right) {
     return (
       <Header {...props}>
-        <HeaderColumnLeft {...props}>
-          <HeaderTitleContainer {...props}>
-            <Title {...props}>{props.title}</Title>
-            <Caption {...props}>{props.caption}</Caption>
-          </HeaderTitleContainer>
-        </HeaderColumnLeft>
-        <HeaderColumnRight {...props}>
-          <HeaderFeaturedImage {...props} src={props.featured_image}/>
-        </HeaderColumnRight>
+        <Column {...props}>
+          <TitleContainer {...props}>
+            <Title {...props}>{title}</Title>
+            <Caption {...props}>{caption}</Caption>
+          </TitleContainer>
+        </Column>
+        <Column {...props}>
+            <FeaturedImage {...props} src={props.featured_image}/>
+        </Column>
       </Header>
-    )
+    );
   } else {
-    return <Header {...props}>
-      <HeaderColumn {...props}>
-        <HeaderTitleContainer {...props}>
-          <Title {...props}>{props.title}</Title>
-          <Caption {...props}>{props.caption}</Caption>
-        </HeaderTitleContainer>
-      </HeaderColumn>
+    return (<Header {...props}>
+      <Column {...props}>
+        <TitleContainer {...props}>
+          <Title {...props}>{title}</Title>
+          <Caption {...props}>{caption}</Caption>
+        </TitleContainer>
+      </Column>
     </Header>
+    );
   }
-
 };
 
 // Banner Props Validation
 Banner.propTypes = {
-  title: PropTypes.string,
-  caption: PropTypes.string
+  title: PropTypes.string.isRequired,
+  caption: PropTypes.string,
+  featured_image: PropTypes.string,
+  left: PropTypes.bool,
+  right: PropTypes.bool,
+  dark: PropTypes.bool
 };
 
 export default Banner;

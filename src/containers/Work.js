@@ -12,10 +12,10 @@ class Work extends Component {
   }
 
   // Helper function to render the various sections
-  renderWork(workData) {
-    const {title, summary, description, site_url, repo_url, image_url, tools} = workData;
+  renderProjects(projectData) {
+    const {title, summary, description, site_url, repo_url, image_url, tools} = projectData;
     return (
-      <Section key={title} title={title} summary={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools}/>
+      <Section key={title} title={title} caption={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools}/>
     );
   }
 
@@ -31,7 +31,7 @@ class Work extends Component {
     return (
       <div id="work">
         <Banner title={title} featured_image={banner_url} caption={caption} />
-        {projects.map(this.renderWork)}
+        {projects.map(this.renderProjects)}
       </div>
     );
   }

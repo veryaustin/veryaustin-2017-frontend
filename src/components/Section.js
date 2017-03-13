@@ -14,27 +14,11 @@ const SectionItem = styled.section`
 
 // Title styles for section
 const SectionTitle = styled.h1`
-  font-family: Volte Sans Rounded;
+  font-family: "Volte Sans Rounded";
   font-weight: 600;
   font-size: 2em;
   line-height: .75em;
   letter-spacing: -1px;
-`;
-
-// Technology title styles
-const SectionTechnology = styled.h2`
-  font-family: Volte Sans Rounded;
-  font-weight: 600;
-  font-size: 2em;
-  line-height: .75em;
-  letter-spacing: -1px;
-  padding: 15px 40px;
-  @media only screen and (max-width: 768px) {
-    order: 4;
-    font-size: 1.5em;
-    padding-left: 20px; 
-    padding-bottom: 0;
-  }
 `;
 
 // Summary styles for section
@@ -65,39 +49,39 @@ const SectionColumn = styled.div`
 // Styles that modify column styles for Left Column
 const SectionColumnLeft = styled(SectionColumn)`
     @media only screen and (max-width: 768px) {
-      order: 2;
+      order: 3;
     }
 `;
 
 // Styles that modify column styles for Right Column
 const SectionColumnRight = styled(SectionColumn)`
     @media only screen and (max-width: 768px) {
-      order: 3;
+      order: 2;
     }
 `;
 
 // Image styles for screenshot images
-const SectionImage = styled.img`
+const SectionFeaturedImage = styled.img`
   width: 120%;
   margin: 0 0 0 130px;
   @media only screen and (max-width: 768px) {
-    order: 1;
     width: 100%;
     margin: 0;
+    order: 1;
   }
 `;
 
 // Order styles for the Grid list on mobile
 const SectionGrid = styled(Grid)`
   @media only screen and (max-width: 768px) {
-    order: 5;
+    order: 4;
   }
 `;
 
 // Section Component
 const Section = (props) => {
   // Destructure Props
-  const {title, summary, description, image_url, items} = props;
+  const {title, caption, description, image_url, label, items} = props;
    if (!items) {
     return (
       <div>Loading</div>
@@ -107,14 +91,13 @@ const Section = (props) => {
     <SectionItem>
       <SectionColumnLeft>
         <SectionTitle>{title}</SectionTitle>
-        <SectionSummary>{summary}</SectionSummary>
+        <SectionSummary>{caption}</SectionSummary>
         <SectionDescription>{description}</SectionDescription>
       </SectionColumnLeft>
       <SectionColumnRight>
-        <SectionImage src={image_url}/>
+        <SectionFeaturedImage src={image_url}/>
       </SectionColumnRight>
-      <SectionTechnology>Tools & Technologies:</SectionTechnology>
-      <SectionGrid gridItems={items} />
+      <SectionGrid gridItems={items} label={label || "Technology & Tools:"} />
     </SectionItem>
   );
 };
@@ -122,11 +105,12 @@ const Section = (props) => {
 // Section Props Validation
 Section.propTypes = {
   title: PropTypes.string.isRequired,
-  summary: PropTypes.string.isRequired,
+  caption: PropTypes.string,
   description: PropTypes.string.isRequired,
   image_url: PropTypes.string,
   site_url: PropTypes.string,
   repo_url: PropTypes.string,
+  label: PropTypes.string,
   items: PropTypes.array
 };
 

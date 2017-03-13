@@ -17,7 +17,7 @@ class About extends Component {
     return (
       <div>
         <Banner title={title} caption={caption} featured_image={banner_url} dark />
-        <Section description={content} image_url={image_url} tools={tools} />
+        <Section description={content} image_url={image_url} items={tools} label={"Tools Of The Trade:"}/>
       </div>
     ); 
   }

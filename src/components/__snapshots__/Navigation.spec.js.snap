@@ -38,6 +38,8 @@ exports[`Navigation Component renders the navigation component 1`] = `
       className=""
       href="http://writing.veryaustin.com">
       Writing
+      <styled.i
+        className="fa fa-arrow-circle-o-right" />
     </Styled(Link)>
     <Styled(Link)
       activeStyle={

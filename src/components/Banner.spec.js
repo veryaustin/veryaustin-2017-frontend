@@ -6,7 +6,7 @@ describe ('Banner Component', () => {
   // Component Tests
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<Banner />);
+    wrapper = shallow(<Banner title={"Test Title"}/>);
   });
 
   it('renders the banner', () => {

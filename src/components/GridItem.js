@@ -38,7 +38,7 @@ const GridItem = (props) => {
 
 // GridItem Props Validation
 GridItem.propTypes = {
-  gridItem: PropTypes.object
+  gridItem: PropTypes.object,
 };
 
 export default GridItem;
