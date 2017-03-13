@@ -18,7 +18,7 @@ const Column = styled.div`
   width: ${props => props.left || props.right ? "50%" : "100%"};
   overflow: hidden;
   position: relative;
-  padding: 25px;
+  padding: ${props => props.left || props.right ? " 25px;" : "0"};
   @media only screen and (min-width: 320px) and (max-width: 480px) {
     width: 100%;
     overflow: auto;
@@ -92,14 +92,16 @@ const Caption = styled.h3`
 // Header Title & Caption Container For Styles
 const TitleContainer = styled.div`
   width: 100%;
-  padding-top: 15%;
-  position: relative;
+  padding: ${props => props.left || props.right ? "15% 20px 0 20px" : "15% 0 0 0"};
+  position: absolute;
   top: 25%;
-  @media only screen and (min-width: 320px) and (max-width: 480px) {
+  left: 0;
+  right: 0;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
     padding-top: 0;
     text-align: center;
   }
-  @media only screen and (min-width: 481px) and (max-width: 768px) {
+  @media only screen and (min-device-width: 481px) and (max-device-width: 768px) {
     top: 40%;
     padding-top: 0;
   }
@@ -111,7 +113,7 @@ const TitleContainer = styled.div`
 // Header Featured Image Styles
 const FeaturedImage = styled.img`
   width: 100%;
-  margin: ${props => props.left ? "0 0 0 -20%" : props.right ? "0 0 0 20%" : "inherit"};
+  margin: ${props => props.left ? "0 0 0 -20%" : props.right ? "0 0 0 20%" : null};
   position: relative;
   top: 25%;
   @media only screen and (min-width: 320px) and (max-width: 480px) {
@@ -123,6 +125,15 @@ const FeaturedImage = styled.img`
     width: 100%;
     margin: 0;
     top: 0;
+  }
+`;
+
+// Header Call To Action
+const Actions = styled.div`  width: 50vw;
+  width: 50vw;
+  margin: 40px auto;
+  @media only screen and (max-width: 768px) {
+    width: 100vw;
   }
 `;
 
@@ -163,6 +174,7 @@ const Banner = (props) => {
         <TitleContainer {...props}>
           <Title {...props}>{title}</Title>
           <Caption {...props}>{caption}</Caption>
+          <Actions>{props.children}</Actions>
         </TitleContainer>
       </Column>
     </Header>
@@ -177,7 +189,8 @@ Banner.propTypes = {
   featured_image: PropTypes.string,
   left: PropTypes.bool,
   right: PropTypes.bool,
-  dark: PropTypes.bool
+  dark: PropTypes.bool,
+  children: PropTypes.element
 };
 
 export default Banner;

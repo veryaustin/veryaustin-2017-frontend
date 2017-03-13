@@ -96,7 +96,7 @@ const Section = ({title, caption, description, image_url, label, items}) => {
       <ColumnRight>
         <FeaturedImage src={image_url}/>
       </ColumnRight>
-      <StyledGrid gridItems={items} label={label || "Technology & Tools:"} />
+      <StyledGrid gridItems={items} label={label} />
     </StyledSection>
   );
 };
@@ -111,6 +111,10 @@ Section.propTypes = {
   repo_url: PropTypes.string,
   label: PropTypes.string,
   items: PropTypes.array
+};
+
+Section.defaultProps = {
+  label: 'Technology & Tools:'
 };
 
 export default Section;

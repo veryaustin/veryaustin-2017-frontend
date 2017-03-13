@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchContact} from '../actions/contactActions';
 import Banner from '../components/Banner';
-import Wrapper from '../components/Wrapper';
 import Grid from '../components/Grid';
 
 class Contact extends Component {
@@ -22,8 +21,9 @@ class Contact extends Component {
     }
     return (
       <div id="contact">
-        <Banner title={title} caption={caption} />
-        <Wrapper><Grid gridItems={contactInfo}/></Wrapper>
+        <Banner title={title} caption={caption}>
+          <Grid gridItems={contactInfo} />
+        </Banner>
       </div>
     );
   }

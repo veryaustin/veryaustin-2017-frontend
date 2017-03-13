@@ -35,7 +35,7 @@ const Grid = (props) => {
   }
   return (
     <GridList>
-      <GridLabel>{label}</GridLabel>
+      {label ? <GridLabel>{label}</GridLabel> : null}
       {gridItems.map((gridItem, index) =>
         <GridItem key={index} gridItem={gridItem} />
       )}

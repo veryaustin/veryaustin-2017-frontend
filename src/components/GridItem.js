@@ -7,11 +7,11 @@ const Item = styled.div`
   width: 10vw;
   height: 10vw;
   background-color: ${props => props.color};
-  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  @media only screen and (min-width: 320px) and (max-width: 480px) {
     width: 50vw;
     height: 50vw;
   }
-  @media only screen and (min-device-width: 481px) and (max-width: 768px) {
+  @media only screen and (min-width: 481px) and (max-width: 768px) {
     width: 20vw;
     height: 20vw;
   }
@@ -38,7 +38,7 @@ const GridItem = (props) => {
 
 // GridItem Props Validation
 GridItem.propTypes = {
-  gridItem: PropTypes.object,
+  gridItem: PropTypes.object
 };
 
 export default GridItem;
