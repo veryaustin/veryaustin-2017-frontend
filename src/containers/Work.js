@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchWork} from '../actions/workActions';
 import Banner from '../components/Banner';
 import Section from '../components/Section';
+import Loading from '../components/Loading';
 
 class Work extends Component {
   // Ajax call to get API data before the component mounts
@@ -29,9 +30,9 @@ class Work extends Component {
   render() {
     // Destructure the work object
     const {title, caption, banner_url, projects} = this.props.work;
-    if (!projects) {
+    if (projects) {
       return (
-        <div>Loading</div>
+        <Loading />
       );
     }
     return (
