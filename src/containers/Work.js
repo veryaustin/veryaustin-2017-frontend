@@ -30,7 +30,7 @@ class Work extends Component {
   render() {
     // Destructure the work object
     const {title, caption, banner_url, projects} = this.props.work;
-    if (projects) {
+    if (!projects) {
       return (
         <Loading />
       );
