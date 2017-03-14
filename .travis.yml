@@ -20,6 +20,5 @@ deploy:
   local-dir: "./dist"
   acl: public_read
   on:
-    condition: $PRODBUILDCOMPLETE = true
     repo: veryaustin/veryaustin-2017-frontend
     branch: master
