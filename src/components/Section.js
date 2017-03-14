@@ -90,7 +90,7 @@ const ButtonWrapper=styled.div`
 // Section Component
 const Section = (props) => {
   // Destructure Props
-  const {title, caption, description, image_url, repo_url={repo_url}, site_url={site_url}, label, items, dark} = props;
+  const {title, caption, description, image_url, repo_url={repo_url}, site_url={site_url}, label, items} = props;
   if (!items) {
     return (
       <div>Loading</div>

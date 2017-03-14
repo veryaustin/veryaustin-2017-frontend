@@ -30,7 +30,7 @@ const Loading = () => {
         </LoadingText>
       </LoadingTextContainer>
     </LoadingContainer>
-  )
-}
+  );
+};
 
 export default Loading;
