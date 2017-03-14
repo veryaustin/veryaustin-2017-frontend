@@ -1,9 +1,13 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import Grid from './Grid';
+import {Link} from 'react-router'
+import Button from './Button';
 
 // Section Styles
 const StyledSection = styled.section`
+  background: ${props => props.dark ? "#212425": "#FFFFFF"};
+  color: ${props => props.dark ? "#FFFFFF": "#212425"};
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -62,8 +66,8 @@ const ColumnRight = styled(Column)`
 
 // Image styles for screenshot images
 const FeaturedImage = styled.img`
-  width: 120%;
-  margin: 0 0 0 130px;
+  width: 110%;
+  margin: 0 0 0 90px;
   @media only screen and (max-width: 768px) {
     width: 100%;
     margin: 0;
@@ -78,20 +82,36 @@ const StyledGrid = styled(Grid)`
   }
 `;
 
+// Button Wrapper
+const ButtonWrapper=styled.div`
+  margin-top: 50px;
+`;
+
 // Section Component
-const Section = ({title, caption, description, image_url, label, items}) => {
+const Section = (props) => {
   // Destructure Props
-   if (!items) {
+  const {title, caption, description, image_url, repo_url={repo_url}, site_url={site_url}, label, items, light} = props;
+  if (!items) {
     return (
       <div>Loading</div>
     );
   }
   return(
-    <StyledSection>
+    <StyledSection {...props}>
       <ColumnLeft>
         <Title>{title}</Title>
         <Summary>{caption}</Summary>
         <Description>{description}</Description>
+        <ButtonWrapper>
+          { site_url
+            ? <Link to={site_url}><Button>Visit Site</Button></Link>
+            : null
+          }
+          { repo_url
+            ? <Link to={repo_url}><Button secondary {...props}>Visit Repo</Button></Link>
+            : null
+          }
+        </ButtonWrapper>
       </ColumnLeft>
       <ColumnRight>
         <FeaturedImage src={image_url}/>

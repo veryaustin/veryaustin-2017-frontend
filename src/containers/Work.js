@@ -12,11 +12,17 @@ class Work extends Component {
   }
 
   // Helper function to render the various sections
-  renderProjects(projectData) {
+  renderProjects(projectData, index) {
     const {title, summary, description, site_url, repo_url, image_url, tools} = projectData;
-    return (
-      <Section key={title} title={title} caption={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools}/>
-    );
+    if (index === 0 || (index%2) === 0) {
+      return (
+        <Section key={index} title={title} caption={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools} dark/>
+      );
+    } else {
+      return (
+        <Section key={index} title={title} caption={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools} />
+      );
+    }
   }
 
   // Map over the returned data from the action creator and format it on the page

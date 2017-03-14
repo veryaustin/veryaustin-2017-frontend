@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {fetchHome} from '../actions/homeActions';
 import Banner from '../components/Banner';
+import Button from '../components/Button';
 
 class Home extends Component {
   // Ajax call to get API data before the component mounts
@@ -13,7 +14,7 @@ class Home extends Component {
     // Destructure the home object
     const {title, caption, banner_url} = this.props.home;
     return(
-      <Banner title={title} caption={caption} featured_image={banner_url} right/>
+      <Banner title={title} caption={caption} featured_image={banner_url} right />
     );
   }
 }
