@@ -130,7 +130,7 @@ Section.propTypes = {
   site_url: PropTypes.string,
   repo_url: PropTypes.string,
   label: PropTypes.string,
-  items: PropTypes.array
+  items: PropTypes.array,
   dark: PropTypes.bool
 };
 
