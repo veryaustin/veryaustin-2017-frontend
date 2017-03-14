@@ -11,9 +11,7 @@ branches:
 after_success:
 - yarn run test:cover:travis
 before_deploy:
-- test $TRAVIS_TEST_RESULT = 0 \
-  && npm run deploybuild \
-  && export PRODBUILDCOMPLETE=true
+- npm run deploybuild && export PRODBUILDCOMPLETE=true
 deploy:
   provider: s3
   access_key_id: AKIAIGDWA63PQ7EPRFXA
