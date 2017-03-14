@@ -92,9 +92,9 @@ const Caption = styled.h3`
 // Header Title & Caption Container For Styles
 const TitleContainer = styled.div`
   width: 100%;
-  padding: ${props => props.left || props.right ? "15% 20px 0 20px" : "15% 0 0 0"};
+  padding: ${props => props.left || props.right ? "15% 20px 0 20px" : "0"};
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 0;
   right: 0;
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
@@ -106,7 +106,6 @@ const TitleContainer = styled.div`
     padding-top: 0;
   }
   @media only screen and (min-width: 1921px) {
-    padding-top: 20%;
   }
 `;
 
@@ -184,7 +183,7 @@ const Banner = (props) => {
 
 // Banner Props Validation
 Banner.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   caption: PropTypes.string,
   featured_image: PropTypes.string,
   left: PropTypes.bool,
