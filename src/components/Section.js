@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Grid from './Grid';
 import {Link} from 'react-router';
 import Button from './Button';
+import Loading from '../components/Loading';
 
 // Section Styles
 const StyledSection = styled.section`
@@ -81,7 +82,7 @@ const Section = (props) => {
   const {title, caption, description, image_url, repo_url={repo_url}, site_url={site_url}, label, items} = props;
   if (!items) {
     return (
-      <div>Loading</div>
+      <Loading />
     );
   }
   return(

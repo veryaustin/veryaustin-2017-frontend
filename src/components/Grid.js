@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import GridItem from './GridItem';
+import Loading from '../components/Loading';
 
 // Container for all grid items
 const GridList = styled.div`
@@ -27,7 +28,7 @@ const Grid = (props) => {
   const {gridItems, label} = props;
   if (!gridItems){
     return (
-      <div>Loading</div>
+      <Loading />
     );
   }
   return (

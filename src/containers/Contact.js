@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {fetchContact} from '../actions/contactActions';
 import Banner from '../components/Banner';
 import Grid from '../components/Grid';
+import Loading from '../components/Loading';
 
 class Contact extends Component {
   // Ajax call to get API data before the component mounts
@@ -16,7 +17,7 @@ class Contact extends Component {
     const {title, caption, contactInfo} = this.props.contact;
     if (!contactInfo) {
       return (
-        <div>Loading</div>
+        <Loading />
       );
     }
     return (
