@@ -38,7 +38,7 @@ const Title = styled.h1`
   }
   @media only screen and (min-width: 480px) and (max-width: 768px){
     font-size: 4em;
-    padding-top: ${props => props.left || props.right ? "35%;" : "0"};
+    padding-top: ${props => props.left || props.right ? "25%;" : "0"};
   }
   @media only screen and (min-width: 769px) and (max-width: 1024px){
     font-size: 3.2em;
