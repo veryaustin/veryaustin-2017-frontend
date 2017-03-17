@@ -10,7 +10,7 @@ const Header = styled.header`
   height: calc(100vh - 140px);
   align-items: center;
   display: flex;
-  flex-direction: ${props => props.left || props.right ? "column"  : "row"};
+  flex-direction: ${props => props.left || props.right ? "column" : "row"};
   @media only screen and (min-width: 769px) {
     flex-direction: row;
   }
@@ -20,7 +20,6 @@ const Header = styled.header`
 const Column = styled.div`
   flex: 1;
   overflow: hidden;
-  padding: 20px;
 `;
 
 // Banner Title Styles
@@ -32,13 +31,13 @@ const Title = styled.h1`
   line-height: .75em;
   letter-spacing: -2.91px;
   color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
-  padding-top: ${props => props.left || props.right ? "10%;" : "0"};
+  padding: ${props => props.left ? "10% 20px 0 0" : props.right ? "10% 0 0 20px": "0"};
   @media only screen and (min-width: 769px) {
     text-align: ${props => props.left ? "right" : props.right ? "left" : "center"};
   }
   @media only screen and (min-width: 480px) and (max-width: 768px){
     font-size: 4em;
-    padding-top: ${props => props.left || props.right ? "25%;" : "0"};
+    padding-top: ${props => props.left || props.right ? "25%" : "0"};
   }
   @media only screen and (min-width: 769px) and (max-width: 1024px){
     font-size: 3.2em;
@@ -61,6 +60,7 @@ const Caption = styled.h3`
   font-size: 0.750em;
   text-align: center;
   color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
+  padding: ${props => props.left ? "0 20px 0 0" : props.right ? "0 0 0 20px" : "0 0 0 0"};
   @media only screen and (min-width: 769px) {
     text-align: ${props => props.left ? "right" : props.right ? "left" : "center"};
   }
@@ -86,6 +86,7 @@ const FeaturedImage = styled.img`
   width: 100%;
   @media only screen and (min-width: 769px) {
     width: 130%;
+    margin-left: ${props => props.left ? "-180px" : "0"};
   }
 `;
 
