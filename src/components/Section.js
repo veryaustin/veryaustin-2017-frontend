@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
 import Grid from './Grid';
-import {Link} from 'react-router'
+import {Link} from 'react-router';
 import Button from './Button';
 
 // Section Styles
@@ -9,10 +9,13 @@ const StyledSection = styled.section`
   background: ${props => props.dark ? "#212425": "#FFFFFF"};
   color: ${props => props.dark ? "#FFFFFF": "#212425"};
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  @media only screen and (max-width: 768px) {
-    flex-wrap: wrap-reverse;
+  text-align: center;
+  @media only screen and (min-width: 769px){ 
+    flex-direction: row;
+    padding-right: 0;
+    text-align: left;
   }
 `;
 
@@ -40,46 +43,31 @@ const Description = styled.p`
 
 // Column styles for individual column
 const Column = styled.div`
-  width: 50%;
-  padding: 45px 40px;
-  overflow: hidden;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
+  flex: 1;
+  @media only screen and (min-width: 768px) {
+    overflow: hidden;
   }
 `;
 
 // Styles that modify column styles for Left Column
 const ColumnLeft = styled(Column)`
-    @media only screen and (max-width: 768px) {
-      order: 3;
-    }
+  padding: 20px;
 `;
 
 // Styles that modify column styles for Right Column
 const ColumnRight = styled(Column)`
-    @media only screen and (max-width: 768px) {
-      order: 2;
+  padding: 20px;
+  @media only screen and (min-width: 769px){ 
+    img {
+      margin: 0 0 0 50px;
+      width: 130%;
     }
+  }
 `;
 
 // Image styles for screenshot images
 const FeaturedImage = styled.img`
-  width: 110%;
-  margin: 0 0 0 90px;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    margin: 0;
-    order: 1;
-  }
-`;
-
-// Order styles for the Grid list on mobile
-const StyledGrid = styled(Grid)`
-  @media only screen and (max-width: 768px) {
-    order: 4;
-  }
+  width: 100%;
 `;
 
 // Button Wrapper
@@ -116,7 +104,7 @@ const Section = (props) => {
       <ColumnRight>
         <FeaturedImage src={image_url}/>
       </ColumnRight>
-      <StyledGrid gridItems={items} label={label} />
+      <Grid gridItems={items} label={label} />
     </StyledSection>
   );
 };

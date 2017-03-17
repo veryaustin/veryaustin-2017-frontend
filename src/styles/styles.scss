@@ -1,25 +1,24 @@
 @import 'normalize';
 @import 'fonts';
 
-$primary: #4A4A4A;
-$highlight: #D0011B;
-$light_grey: #C5C5C5;
-
+// Global Box Sizing
 * {
   box-sizing: border-box;
 }
 
+// HTML/Body Font Styles
 html, body {
   font-family: 'Open Sans', sans-serif;
-  color: $primary;
-  height: 100%;
+  color: #4A4A4A;
 }
 
+// Global Link Styles
 a {
   text-decoration: none;
-  color: $highlight;
+  color: #4A4A4A;
 }
 
+// Main App Flex Box
 #app {
   display: flex;
   flex-direction: column;

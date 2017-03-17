@@ -8,21 +8,18 @@ const GridList = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  text-align: left;
 `;
 
 // Grid Label
 const GridLabel = styled.h2`
-  width: 100%;
-  padding: 15px 40px;
-  font-family: "Volte Sans Rounded";
-  font-weight: 600;
-  font-size: 2em;
-  line-height: .75em;
-  letter-spacing: -1px;
-  @media only screen and (max-width: 768px) {
-    font-size: 1.5em;
-    padding: 10px 0 0 20px;
-  }
+    width: 100%;
+    padding: 15px 20px;
+    font-family: "Volte Sans Rounded";
+    font-weight: 600;
+    font-size: 2em;
+    line-height: .75em;
+    letter-spacing: -1px;
 `;
 
 // Component to return a div containing all grid items

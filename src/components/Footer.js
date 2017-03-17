@@ -1,15 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import Wrapper from './Wrapper';
 import {Link} from 'react-router';
 
 // Main Footer Component Styles
 const MainFooter = styled.footer`
-  padding: .5em 0 .5em 0;
+  text-align: center;
+  font-size: 0.750em;
+  padding: .5em;
   border-top: 1px solid #C5C5C5;
-  width: 100%;
-  height: 75px;
-  font-weight: 200;
+  @media only screen and (min-width: 769px) {
+    font-size: 1em;
+    padding: .5em 0 .5em 2em;
+  }
 `;
 
 // Footer Link Component Styles 
@@ -21,10 +23,8 @@ const FooterLink = styled(Link)`
 const Footer = () => {
   return(
     <MainFooter>
-      <Wrapper>
-        <h5>&copy; {new Date().getFullYear()} Austin Lauritsen  | Built in Nashville.
+      <h5>&copy; {new Date().getFullYear()} Austin Lauritsen  | Built in Nashville.
         Powered by <FooterLink to="https://facebook.github.io/react"><img src={require('../images/react_color.svg')}/> React</FooterLink> + <FooterLink to="http://redux.js.org/"><img src={require('../images/redux_color.svg')}/> Redux</FooterLink></h5>
-      </Wrapper>
     </MainFooter>
   );
 };

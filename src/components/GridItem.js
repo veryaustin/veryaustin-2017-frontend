@@ -4,16 +4,16 @@ import {Link} from 'react-router';
 
 // Container for individual grid item
 const Item = styled.div`
-  width: 10vw;
-  height: 10vw;
+  width: 50vw;
+  height: 50vw;
   background-color: ${props => props.color};
-  @media only screen and (min-width: 320px) and (max-width: 480px) {
-    width: 50vw;
-    height: 50vw;
-  }
   @media only screen and (min-width: 481px) and (max-width: 768px) {
     width: 20vw;
     height: 20vw;
+  }
+  @media only screen and (min-width: 769px) {
+    width: 10vw;
+    height: 10vw;
   }
 `;
 
