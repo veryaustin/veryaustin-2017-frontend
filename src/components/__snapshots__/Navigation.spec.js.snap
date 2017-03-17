@@ -1,5 +1,9 @@
 exports[`Navigation Component renders the navigation component 1`] = `
-<div>
+<styled.header>
+  <Styled(Link)
+    to="/">
+    Austin Lauritsen
+  </Styled(Link)>
   <MenuButton
     onClick={[Function]} />
   <styled.nav
@@ -52,5 +56,5 @@ exports[`Navigation Component renders the navigation component 1`] = `
       Contact
     </Styled(Link)>
   </styled.nav>
-</div>
+</styled.header>
 `;

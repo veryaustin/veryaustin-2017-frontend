@@ -1,13 +1,13 @@
 import React, {Component, PropTypes} from 'react';
-import Header from './Header';
+import Navigation from './Navigation';
 import Footer from './Footer';
 
 class App extends Component {
   render() {
     return(
       <div>
-        <Header />
-        {this.props.children}
+        <Navigation />
+          {this.props.children}
         <Footer />
       </div>
     );

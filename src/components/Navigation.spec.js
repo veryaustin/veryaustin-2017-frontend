@@ -44,7 +44,6 @@ describe('Navigation Component', () => {
     });
   });
 
-
   describe('Links', () => {
     let wrapper;
 
@@ -57,7 +56,6 @@ describe('Navigation Component', () => {
     it('navigates to the "home" page', () => {
       const link = wrapper.find('Styled(IndexLink)');
       expect(link.props().to).toBe('/');
-
     });
 
     it('hides navigation when clicking the "home" link', () => {
@@ -65,7 +63,7 @@ describe('Navigation Component', () => {
       const before = wrapper.find('[navToggled=true]').length;
       expect(before).toBe(1);
       // Simulate Link Click
-      const link = wrapper.find('Styled(Link)').at(0);
+      const link = wrapper.find({to: "/"}).at(1);
       link.simulate('click');
       // Expect navToggle state to be false
       const after = wrapper.find('[navToggled=true]').length;
@@ -73,8 +71,8 @@ describe('Navigation Component', () => {
     });
   
     it('navigates to the "work" page', () => {
-      const link = wrapper.find('Styled(Link)').at(0);
-      expect(link.props().to).toBe('work');
+      const link = wrapper.find({to: "work"});
+      expect(link).toExist;
     });
 
     it('hides navigation when clicking the "work" link', () => {
@@ -82,7 +80,7 @@ describe('Navigation Component', () => {
       const before = wrapper.find('[navToggled=true]').length;
       expect(before).toBe(1);
       // Simulate Link Click
-      const link = wrapper.find('Styled(Link)').at(1);
+      const link = wrapper.find({to: "work"});
       link.simulate('click');
       // Expect navToggle state to be false
       const after = wrapper.find('[navToggled=true]').length;
@@ -90,8 +88,8 @@ describe('Navigation Component', () => {
     });
 
     it('navigates to the "about" page', () => {
-      const link = wrapper.find('Styled(Link)').at(1);
-      expect(link.props().to).toBe('about');
+      const link = wrapper.find({to: "about"});
+      expect(link).toExist;
     });
 
     it('hides navigation when clicking the "about" link', () => {
@@ -99,7 +97,7 @@ describe('Navigation Component', () => {
       const before = wrapper.find('[navToggled=true]').length;
       expect(before).toBe(1);
       // Simulate Link Click
-      const link = wrapper.find('Styled(Link)').at(1);
+      const link = wrapper.find({to: "about"});
       link.simulate('click');
       // Expect navToggle state to be false
       const after = wrapper.find('[navToggled=true]').length;
@@ -107,13 +105,13 @@ describe('Navigation Component', () => {
     });
 
     it('navigates to the external "writing" page', () => {
-      const link = wrapper.find('Styled(Link)').at(2);
-      expect(link.props().href).toBe('http://writing.veryaustin.com');
+      const link = wrapper.find({href: "http://writing.veryaustin.com"});
+      expect(link).toExist;
     });
     
     it('navigates to the "contact" page', () => {
-      const link = wrapper.find('Styled(Link)').at(3);
-      expect(link.props().to).toBe('contact');
+      const link = wrapper.find({to: "contact"});
+      expect(link).toExist;
     });
 
     it('hides navigation when clicking the "contact" link', () => {
@@ -121,7 +119,7 @@ describe('Navigation Component', () => {
       const before = wrapper.find('[navToggled=true]').length;
       expect(before).toBe(1);
       // Simulate Link Click
-      const link = wrapper.find('Styled(Link)').at(3);
+      const link = wrapper.find({to: "contact"});
       link.simulate('click');
       // Expect navToggle state to be false
       const after = wrapper.find('[navToggled=true]').length;

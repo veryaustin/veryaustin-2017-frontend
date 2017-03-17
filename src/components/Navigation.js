@@ -3,36 +3,62 @@ import {Link, IndexLink} from 'react-router';
 import styled, {css} from 'styled-components';
 import MenuButton from './MenuButton';
 
-// Main Navigation Component Styles
+// Main Header Component Styles
+const Header = styled.header`
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 1px solid #C5C5C5;
+`;
+
+// Logo Link Component Styles 
+const Logo = styled(Link)`
+  flex: 1;
+  color: #4A4A4A;
+  font-family: 'Volte Sans Rounded';
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.30px;
+`;
+
+// Navigation Component Styles
 const MainNavigation = styled.nav`
-  float: right;
+  width: 100%;
   font-size: 14px;
   font-weight: 200;
-  padding-top: .4em;
-
-  @media only screen and (max-width: 768px) {
-    display: ${props => props.navToggled ? 'block' : 'none'}
-    width: 100%;
+  display: ${props => props.navToggled ? 'flex' : 'none'};
+  flex-direction: ${props => props.navToggled ? 'column' : null};
+  @media only screen and (min-width: 769px) {
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
   }
 `;
 
 // Navigation Link Styles
 const NavLinkStyles = css`
-  margin-left: 2.625em;
+  padding: 1em 0;
   color: #4A4A4A;
-
   &:hover {
     text-decoration: underline;
   }
-
-  @media only screen and (max-width: 768px) {
-    margin: 0 !important;
-    display: block
-    padding: 1em 0;
-    border-bottom: 1px solid #C5C5C5;
+  border-bottom: 1px solid #C5C5C5;
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+  }
+  @media only screen and (min-width: 769px) {
+    border-bottom: none;
+    margin-left: 2.625em;
+    &:hover {
+      text-decoration: underline;
+    }
     &:last-child {
-      border-bottom: none;
-      padding-bottom: 0px;
+      padding-bottom: 1em;
     }
   }
 `;
@@ -54,6 +80,7 @@ const IndexNavLink = styled(IndexLink)`
 const NavOutIcon = styled.i`
   color: #4A4A4A;
   font-size: 14px;
+  display: inline;
   padding: 0 0 0 8px;
 `;
 
@@ -84,7 +111,8 @@ class Navigation extends Component {
 
   render() {
    return(
-     <div>
+     <Header>
+      <Logo to="/">Austin Lauritsen</Logo>
       <MenuButton onClick={this.toggleNav} />
       <MainNavigation navToggled={this.state.navToggled}>
         <IndexNavLink to="/" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Home</IndexNavLink>
@@ -93,7 +121,7 @@ class Navigation extends Component {
         <NavLink href="http://writing.veryaustin.com" className="">Writing<NavOutIcon className="fa fa-arrow-circle-o-right"/></NavLink>
         <NavLink to="contact" activeStyle={{ textDecoration: "underline"}} onClick={this.handleNavClick}>Contact</NavLink>
       </MainNavigation>
-    </div>
+    </Header>
    );
  }
 }

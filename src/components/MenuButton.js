@@ -7,10 +7,8 @@ const Bars = styled.i`
 `;
 
 const Button = styled.div`
-  display: none;
-  @media only screen and (max-width: 768px) {
-    display: block;
-    float: right;
+  @media only screen and (min-width: 769px) {
+    display: none;  
   }
 `;
 
