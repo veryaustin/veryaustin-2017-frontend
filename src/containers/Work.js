@@ -17,11 +17,11 @@ class Work extends Component {
     const {title, summary, description, site_url, repo_url, image_url, tools} = projectData;
     if (index === 0 || (index%2) === 0) {
       return (
-        <Section key={index} title={title} caption={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools} dark/>
+        <Section key={index} title={title} caption={summary} description={description} image_url={image_url} primary_site_url={site_url} secondary_site_url={repo_url} items={tools} dark/>
       );
     } else {
       return (
-        <Section key={index} title={title} caption={summary} description={description} image_url={image_url} site_url={site_url} repo_url={repo_url} items={tools} />
+        <Section key={index} title={title} caption={summary} description={description} image_url={image_url} primary_site_url={site_url} secondary_site_url={repo_url} items={tools} />
       );
     }
   }
@@ -67,8 +67,8 @@ Work.propTypes = {
     title: PropTypes.string, 
     summary: PropTypes.string, 
     description: PropTypes.string,
-    site_url: PropTypes.string,
-    repo_url: PropTypes.string, 
+    primary_url: PropTypes.string,
+    secondary_url: PropTypes.string, 
     image_url: PropTypes.string, 
     tools: PropTypes.array
   }),

@@ -5,6 +5,7 @@ import {fetchContact} from '../actions/contactActions';
 import Banner from '../components/Banner';
 import Grid from '../components/Grid';
 import Loading from '../components/Loading';
+import styled from 'styled-components';
 
 class Contact extends Component {
   // Ajax call to get API data before the component mounts
@@ -22,9 +23,8 @@ class Contact extends Component {
     }
     return (
       <div id="contact">
-        <Banner title={title} caption={caption}>
-          <Grid gridItems={contactInfo} />
-        </Banner>
+        <Banner title={title} caption={caption} />
+        <Grid gridItems={contactInfo} />
       </div>
     );
   }

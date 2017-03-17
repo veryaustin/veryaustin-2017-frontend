@@ -79,7 +79,7 @@ const ButtonWrapper=styled.div`
 // Section Component
 const Section = (props) => {
   // Destructure Props
-  const {title, caption, description, image_url, repo_url={repo_url}, site_url={site_url}, label, items} = props;
+  const {title, caption, description, image_url, primary_site_url={primary_site_url}, secondary_site_url={secondary_site_url}, primary_site_button={primary_site_button}, secondary_site_button={secondary_site_button}, label, items} = props;
   if (!items) {
     return (
       <Loading />
@@ -92,12 +92,12 @@ const Section = (props) => {
         <Summary>{caption}</Summary>
         <Description>{description}</Description>
         <ButtonWrapper>
-          { site_url
-            ? <Link to={site_url}><Button>Visit Site</Button></Link>
+          { primary_site_url
+            ? <Link to={primary_site_url}><Button>{primary_site_button}</Button></Link>
             : null
           }
-          { repo_url
-            ? <Link to={repo_url}><Button secondary {...props}>Visit Repo</Button></Link>
+          { secondary_site_url
+            ? <Link to={secondary_site_url}><Button secondary {...props}>{secondary_site_button}</Button></Link>
             : null
           }
         </ButtonWrapper>
@@ -112,19 +112,24 @@ const Section = (props) => {
 
 // Section Props Validation
 Section.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   caption: PropTypes.string,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
   image_url: PropTypes.string,
-  site_url: PropTypes.string,
-  repo_url: PropTypes.string,
+  primary_site_url: PropTypes.string,
+  secondary_site_url: PropTypes.string,
+  primary_site_button: PropTypes.string,
+  secondary_site_button: PropTypes.string,
   label: PropTypes.string,
   items: PropTypes.array,
   dark: PropTypes.bool
 };
 
+// Section Default Props
 Section.defaultProps = {
-  label: 'Technology & Tools:'
+  label: 'Technology & Tools:',
+  primary_site_button: 'Visit Site',
+  secondary_site_button: 'Visit Repo'
 };
 
 export default Section;

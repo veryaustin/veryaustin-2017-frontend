@@ -7,13 +7,9 @@ const Item = styled.div`
   width: 50vw;
   height: 50vw;
   background-color: ${props => props.color};
-  @media only screen and (min-width: 481px) and (max-width: 768px) {
+  @media only screen and (min-width: 769px) {
     width: 20vw;
     height: 20vw;
-  }
-  @media only screen and (min-width: 769px) {
-    width: 10vw;
-    height: 10vw;
   }
 `;
 

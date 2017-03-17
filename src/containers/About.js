@@ -13,11 +13,11 @@ class About extends Component {
   
   render() {
     // Destructure the about object
-    const {title, caption, image_url, banner_url, content, tools } = this.props.about;
+    const {title, caption, image_url, banner_url, content, resume_site_url, resume_download_url, tools } = this.props.about;
     return (
       <div>
         <Banner title={title} caption={caption} featured_image={banner_url} dark />
-        <Section description={content} image_url={image_url} items={tools} label={"Tools Of The Trade:"}/>
+        <Section description={content} image_url={image_url} items={tools} primary_site_url={resume_site_url} secondary_site_url={resume_download_url} label={"Tools Of The Trade:"} primary_button={"View Resume Site"} secondary_button={"Download Resume"}/>
       </div>
     ); 
   }

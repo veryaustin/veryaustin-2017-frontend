@@ -24,8 +24,7 @@ const GridLabel = styled.h2`
 `;
 
 // Component to return a div containing all grid items
-const Grid = (props) => {
-  const {gridItems, label} = props;
+const Grid = ({gridItems, label}) => {
   if (!gridItems){
     return (
       <Loading />

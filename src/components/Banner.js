@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
+import Grid from '../components/Grid';
 
 // Banner Styles
 const Header = styled.header`
@@ -90,15 +91,6 @@ const FeaturedImage = styled.img`
   }
 `;
 
-// Banner Call To Action
-const Actions = styled.div`  width: 50vw;
-  width: 50vw;
-  margin: 40px auto;
-  @media only screen and (max-width: 768px) {
-    width: 100vw;
-  }
-`;
-
 // Banner Component
 const Banner = (props) => {
   const {title, caption, featured_image} = props;
@@ -132,7 +124,6 @@ const Banner = (props) => {
           <Column {...props}>
             <Title {...props}>{title}</Title>
             <Caption {...props}>{caption}</Caption>
-            <Actions>{props.children}</Actions>
           </Column>
         </Header>
     );

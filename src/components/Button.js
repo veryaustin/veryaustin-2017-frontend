@@ -1,7 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 
 // Button Styles
-const Button = styled.button`
+const StyledButton = styled.button`
   background: ${props => props.secondary && props.dark ? "#FFFFFF" : props.secondary ? "#212425" : "#D3180E"};
   color: ${props => props.secondary && props.dark ? "#212425" : props.secondary ? "#FFFFFF" : "#FFFFFF"};
   border: none;
@@ -13,6 +14,15 @@ const Button = styled.button`
   font-size: 1.5em;
   font-weight: 600;
   letter-spacing: -.5px;
+  cursor: pointer;
 `;
+
+
+const Button = (props) => {
+  // const {gridItems, label} = props;
+  return (
+    <StyledButton {...props} />
+  )
+};
 
 export default Button;
