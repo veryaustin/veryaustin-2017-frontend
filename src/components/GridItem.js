@@ -28,7 +28,7 @@ const ItemImage = styled.img`
 const GridItem = (props) => {
   const {site_url, background_color, logo_url} = props.gridItem;
   return (
-    <Link to={site_url}>
+    <Link to={site_url} target="_blank">
       <Item color={background_color}>
         <ItemImage src={logo_url}/>
       </Item>
