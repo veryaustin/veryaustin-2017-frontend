@@ -17,7 +17,7 @@ class About extends Component {
     return (
       <div>
         <Banner title={title} caption={caption} featured_image={banner_url} dark />
-        <Section description={content} image_url={image_url} items={tools} primary_site_url={resume_site_url} secondary_site_url={resume_download_url} label={"Tools Of The Trade:"} primary_button={"View Resume Site"} secondary_button={"Download Resume"}/>
+        <Section description={content} image_url={image_url} items={tools} primary_site_url={resume_site_url} secondary_site_url={resume_download_url} label={"Tools Of The Trade:"} primary_site_button={"View Resume Site"} secondary_site_button={"Download Resume"}/>
       </div>
     ); 
   }
