@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
-import Grid from './Grid';
 import {Link} from 'react-router';
+import Grid from './Grid';
 import Button from './Button';
-import Loading from '../components/Loading';
+import Loading from './Loading';
 
 // Section Styles
 const StyledSection = styled.section`
