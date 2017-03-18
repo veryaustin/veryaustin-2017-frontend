@@ -93,11 +93,11 @@ const Section = (props) => {
         <Description>{description}</Description>
         <ButtonWrapper>
           { primary_site_url
-            ? <Link to={primary_site_url}><Button>{primary_site_button}</Button></Link>
+            ? <Link to={primary_site_url} target="_blank"><Button>{primary_site_button}</Button></Link>
             : null
           }
           { secondary_site_url
-            ? <Link to={secondary_site_url}><Button secondary {...props}>{secondary_site_button}</Button></Link>
+            ? <Link to={secondary_site_url} target="_blank"><Button secondary {...props}>{secondary_site_button}</Button></Link>
             : null
           }
         </ButtonWrapper>
