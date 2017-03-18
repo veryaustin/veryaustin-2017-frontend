@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react';
 import styled from 'styled-components';
-import Grid from '../components/Grid';
 
 // Banner Styles
 const Header = styled.header`
@@ -12,7 +11,9 @@ const Header = styled.header`
   align-items: center;
   display: flex;
   flex-direction: ${props => props.left || props.right ? "column" : "row"};
+  padding: 20px;
   @media only screen and (min-width: 769px) {
+    padding: 0;
     flex-direction: row;
   }
 `;
@@ -32,13 +33,12 @@ const Title = styled.h1`
   line-height: .75em;
   letter-spacing: -2.91px;
   color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
-  padding: ${props => props.left ? "10% 20px 0 0" : props.right ? "10% 0 0 20px": "0"};
   @media only screen and (min-width: 769px) {
-    text-align: ${props => props.left ? "right" : props.right ? "left" : "center"};
+    text-align: ${props => props.left ? "left" : props.right ? "right" : "center"};
+    padding: ${props => props.left ? "10% 0 0 20px" : props.right ? "10% 20px 0 0": "0"};
   }
   @media only screen and (min-width: 480px) and (max-width: 768px){
     font-size: 4em;
-    padding-top: ${props => props.left || props.right ? "25%" : "0"};
   }
   @media only screen and (min-width: 769px) and (max-width: 1024px){
     font-size: 3.2em;
@@ -61,9 +61,10 @@ const Caption = styled.h3`
   font-size: 0.750em;
   text-align: center;
   color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
-  padding: ${props => props.left ? "0 20px 0 0" : props.right ? "0 0 0 20px" : "0 0 0 0"};
+  padding: 0;
   @media only screen and (min-width: 769px) {
-    text-align: ${props => props.left ? "right" : props.right ? "left" : "center"};
+    text-align: ${props => props.left ? "left" : props.right ? "right" : "center"};
+    padding: ${props => props.left ? "0 0 0 20px" : props.right ? "0 20px 0 0" : "0 0 0 0"};
   }
   @media only screen and (min-width: 480px) and (max-width: 768px) {
     font-size: 1.125em;
@@ -85,9 +86,12 @@ const Caption = styled.h3`
 // Banner Featured Image Styles
 const FeaturedImage = styled.img`
   width: 100%;
+  padding: ${props => props.left || props.right ? "10% 0 0 0" : "0"};
   @media only screen and (min-width: 769px) {
-    width: 130%;
-    margin-left: ${props => props.left ? "-180px" : "0"};
+    width: 120%;
+    position: relative;
+    right: ${props => props.left ? "-120px" : "0"};
+    left: ${props => props.right ? "-120px" : "0"};
   }
 `;
 
@@ -98,11 +102,11 @@ const Banner = (props) => {
     return (
       <Header {...props}>
         <Column {...props}>
-          <FeaturedImage {...props} src={featured_image}/>
-        </Column>
-        <Column {...props}>
           <Title {...props}>{title}</Title>
           <Caption {...props}>{caption}</Caption>
+        </Column>
+        <Column {...props}>
+          <FeaturedImage {...props} src={featured_image}/>
         </Column>
       </Header>
     );
@@ -110,11 +114,11 @@ const Banner = (props) => {
     return (
         <Header {...props}>
           <Column {...props}>
-            <Title {...props}>{title}</Title>
-            <Caption {...props}>{caption}</Caption>
+            <FeaturedImage {...props} src={props.featured_image}/>
           </Column>
           <Column {...props}>
-            <FeaturedImage {...props} src={props.featured_image}/>
+            <Title {...props}>{title}</Title>
+            <Caption {...props}>{caption}</Caption>
           </Column>
         </Header>
     );
