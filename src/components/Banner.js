@@ -58,7 +58,7 @@ const Title = styled.h1`
 const Caption = styled.h3`
   font-family: "Volte Sans Rounded";
   font-weight: 300;
-  font-size: 0.750em;
+  font-size: 1.125em;
   text-align: center;
   color: ${props => props.dark ? "#FFFFFF" : "#4A4A4A"};
   padding: 0;
@@ -86,7 +86,7 @@ const Caption = styled.h3`
 // Banner Featured Image Styles
 const FeaturedImage = styled.img`
   width: 100%;
-  padding: ${props => props.left || props.right ? "10% 0 0 0" : "0"};
+  padding: ${props => props.left || props.right ? "5% 0 0 0" : "0"};
   @media only screen and (min-width: 769px) {
     width: 120%;
     position: relative;
