@@ -9,8 +9,16 @@
 2. Run `npm install` to install project dependencies.
 3. Run 'npm start` to run local version of the front-end.
 
-
 ### Credits/Thanks:
 *  Thanks to [Cory House](http://www.bitnative.com/) for the great React|Redux starter kit [react-slingshot](https://github.com/coryhouse/react-slingshot).
 *  Thanks to [Facebook](http://facebook.com) for the [React](https://github.com/facebook/react) JavaScript library.
 *  Thanks to to the development team for the [Redux](http://redux.js.org/) state container for this project.
+
+### Designs:
+| Home  | Work | About |
+| ------------- | ------------- | ------------- |
+| ![Home](./docs/Home.png) | ![Work](./docs/Work.png) | ![Work](./docs/About.png)|
+
+| Writing  | Writing Detail | Contact |
+| ------------- | ------------- | ------------- |
+| ![Writing](./docs/Writing.png) | ![Writing Detail](./docs/Writing_Detail.png) | ![Contact](./docs/Contact.png)|
