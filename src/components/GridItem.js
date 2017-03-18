@@ -7,6 +7,11 @@ const Item = styled.div`
   width: 50vw;
   height: 50vw;
   background-color: ${props => props.color};
+  transition: all .1s ease-in-out;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 10px #000000;
+  }
   @media only screen and (min-width: 769px) {
     width: 20vw;
     height: 20vw;
