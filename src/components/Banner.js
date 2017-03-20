@@ -7,7 +7,7 @@ const Header = styled.header`
               url(${props => props.featured_image && (props.left || props.right) ? "none" : props.featured_image }) no-repeat center center;
   background-size: cover;
   background-position: center;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 152px);
   align-items: center;
   display: flex;
   flex-direction: ${props => props.left || props.right ? "column" : "row"};

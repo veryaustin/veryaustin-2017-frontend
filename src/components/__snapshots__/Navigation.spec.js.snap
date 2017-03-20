@@ -39,7 +39,6 @@ exports[`Navigation Component renders the navigation component 1`] = `
       About
     </Styled(Link)>
     <Styled(Link)
-      className=""
       href="http://writing.veryaustin.com">
       Writing
       <styled.i

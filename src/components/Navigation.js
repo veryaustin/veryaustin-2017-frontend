@@ -30,7 +30,6 @@ const MainNavigation = styled.nav`
   display: ${props => props.navToggled ? 'flex' : 'none'};
   flex-direction: ${props => props.navToggled ? 'column' : null};
   @media only screen and (min-width: 769px) {
-    height: 35px;
     display: flex;
     flex-direction: row;
     flex: 1;
@@ -82,6 +81,9 @@ const NavOutIcon = styled.i`
   font-size: 14px;
   display: inline;
   padding: 0 0 0 8px;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 // Navigation Component
@@ -118,7 +120,7 @@ class Navigation extends Component {
         <IndexNavLink to="/" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Home</IndexNavLink>
         <NavLink to="work" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Work</NavLink>
         <NavLink to="about" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>About</NavLink>
-        <NavLink href="http://writing.veryaustin.com" className="">Writing<NavOutIcon className="fa fa-arrow-circle-o-right"/></NavLink>
+        <NavLink href="http://writing.veryaustin.com">Writing<NavOutIcon className="fa fa-arrow-circle-o-right"/></NavLink>
         <NavLink to="contact" activeStyle={{ textDecoration: "underline"}} onClick={this.handleNavClick}>Contact</NavLink>
       </MainNavigation>
     </Header>
