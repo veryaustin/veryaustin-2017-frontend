@@ -8,13 +8,14 @@ const Header = styled.header`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  justify-content: space-between;
   padding: 1em;
   border-bottom: 1px solid #C5C5C5;
 `;
 
 // Logo Link Component Styles 
 const Logo = styled(Link)`
-  flex: 1;
+
   color: #4A4A4A;
   font-family: 'Volte Sans Rounded';
   font-size: 20px;

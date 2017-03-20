@@ -5,11 +5,11 @@ import {Link} from 'react-router';
 // Main Footer Component Styles
 const MainFooter = styled.footer`
   display: flex;
-  height: 83px;
+  height: 51px;
+  border-top: 1px solid #C5C5C5;
   text-align: center;
   font-size: 0.750em;
-  padding: 2.063em;
-  border-top: 1px solid #C5C5C5;
+  align-items: center;
   @media only screen and (min-width: 769px) {
     font-size: 1em;
     padding: .5em 0 .5em 2em;
