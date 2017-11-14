@@ -17,7 +17,7 @@
 ### Designs:
 | Home  | Work | About |
 | ------------- | ------------- | ------------- |
-| ![Home](http://static.veryaustin.com/api/docs/Home.png) | ![Work](http://static.veryaustin.com/api/docs/Work.png) | ![Work](http://static.veryaustin.com/api/About.png)|
+| ![Home](http://static.veryaustin.com/api/docs/Home.png) | ![Work](http://static.veryaustin.com/api/docs/Work.png) | ![About](http://static.veryaustin.com/api/docs/About.png)|
 
 | Writing  | Writing Detail | Contact |
 | ------------- | ------------- | ------------- |
