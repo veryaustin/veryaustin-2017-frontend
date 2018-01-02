@@ -12,9 +12,8 @@ before_deploy:
 - npm run deploybuild
 deploy:
   provider: s3
-  access_key_id: AKIAIGDWA63PQ7EPRFXA
-  secret_access_key:
-    secure: iaUIgmLM8UJ0c4gIv8X0ntSX5Anr8mqInmCowSJ9HaBHClIbJFtTjd7NpSlAy6jMs7mvo6YGbC6EScK0kXLywDpYAtht/flnQM3J/eq7DjX/EHapQzDfP8JB2kO4SeyTiHoHXUCdVlLG6tAPPw+3fPaP8XdLXM1dwwDHK79PmjD3pi8StyTkLq3juXFhntSQxQ85dmAzLZWc9k+uIPGNRv8ANNDJBi/LtFo5f8Q0N9Hg25DgYp0te4jwGS1kHOl9s7Qns+r8IbAVuZCuSzl6i1kGam6/anVKMboDbKPjIlntZpxFPRauvNKFERPvrNRP+e4hyNloz+en+QHo74PrTVZzJVLLkILiRj8zP4Gwk0FhR48XrV2VdaF7G8rGJeQ/cHQ14xfQ+vnTe2XwYOewvLY5WlHaNNjWuWWLwd6ulTDb9bAR8Rw2mvLW7BxbI1OHBoW73AmnpX8vD3I+LDVnKsZFqxHYGyAHhBhp/DeI6WYPvFfPdauRPNbpGMyLXjqUCEWJTQuuB+Z5jImUYEbZFOBL2wOXNyiu3f+EbzVWr+bmad0MU8JwrBysxWIpwPkfnnza5EUQjGs0vn9N6+bLIawvk25EgiPbHbNMy8fj/R4QNrBRm97eKpJ8cIqHim/DhV2p4zeFmfuBlN2FRKzrVczUwV9LCW7T3cynVDftY/w=
+  access_key_id: AWS_ACCESS_ID
+  secret_access_key: AWS_SECRET_KEY
   bucket: veryaustin.com
   skip_cleanup: true
   local-dir: "./dist"
