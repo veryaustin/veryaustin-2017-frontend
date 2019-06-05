@@ -14,7 +14,7 @@ deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_ID
   secret_access_key: $AWS_SECRET_KEY
-  bucket: veryaustin.com
+  bucket: website-2017.veryaustin.com
   skip_cleanup: true
   local-dir: "./dist"
   acl: public_read
