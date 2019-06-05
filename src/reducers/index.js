@@ -1,16 +1,12 @@
-import {combineReducers} from 'redux';
-import {routerReducer} from 'react-router-redux';
-import homeReducer from './homeReducer';
-import workReducer from './workReducer';
-import aboutReducer from './aboutReducer';
-import contactReducer from './contactReducer';
+import { combineReducers } from "redux";
+import { routerReducer } from "react-router-redux";
+import fetchReducer from "./fetchReducer";
+import pagesReducer from "./pagesReducer";
 
 const rootReducer = combineReducers({
-    routing: routerReducer,
-    home: homeReducer,
-    work: workReducer,
-    about: aboutReducer,
-    contact: contactReducer
+  routing: routerReducer,
+  pages: pagesReducer,
+  fetching: fetchReducer
 });
 
 export default rootReducer;

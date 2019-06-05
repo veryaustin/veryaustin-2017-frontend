@@ -1,6 +1,12 @@
 export default {
-  home: {},
-  work: {},
-  about: {},
-  contact: {}
+  pages: {
+    home: {},
+    work: {},
+    about: {},
+    contact: {}
+  },
+  fetching: {
+    isLoading: true,
+    error: null
+  }
 };

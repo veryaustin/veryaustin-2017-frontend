@@ -1,7 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Home Component renders the home component 1`] = `
 <Home
-  fetchHome={[Function]}
+  fetchPage={[Function]}
+  hasErrored={null}
   home={Object {}}
+  isLoading={false}
   store={
     Object {
       "clearActions": [Function],
@@ -11,5 +15,6 @@ exports[`Home Component renders the home component 1`] = `
       "replaceReducer": [Function],
       "subscribe": [Function],
     }
-  } />
+  }
+/>
 `;

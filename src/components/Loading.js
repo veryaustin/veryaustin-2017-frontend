@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const LoadingContainer = styled.div`
   height: 100vh;
@@ -25,9 +25,7 @@ const Loading = () => {
   return (
     <LoadingContainer>
       <LoadingTextContainer>
-        <LoadingText>
-          Loading...
-        </LoadingText>
+        <LoadingText>Loading...</LoadingText>
       </LoadingTextContainer>
     </LoadingContainer>
   );

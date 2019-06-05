@@ -1,9 +1,0 @@
-exports[`Home Reducer should handle the HOME_FETCH action 1`] = `
-Object {
-  "caption": "test_slogan",
-  "image_url": "test_url",
-  "title": "test_name",
-}
-`;
-
-exports[`Home Reducer should return the initial state 1`] = `Object {}`;

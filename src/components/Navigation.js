@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {Link, IndexLink} from 'react-router';
-import styled, {css} from 'styled-components';
-import MenuButton from './MenuButton';
+import React, { Component } from "react";
+import { Link, IndexLink } from "react-router";
+import styled, { css } from "styled-components";
+import MenuButton from "./MenuButton";
 
 // Main Header Component Styles
 const Header = styled.header`
@@ -10,17 +10,16 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1em;
-  border-bottom: 1px solid #C5C5C5;
+  border-bottom: 1px solid #c5c5c5;
 `;
 
-// Logo Link Component Styles 
+// Logo Link Component Styles
 const Logo = styled(Link)`
-
-  color: #4A4A4A;
-  font-family: 'Volte Sans Rounded';
+  color: #4a4a4a;
+  font-family: "Volte Sans Rounded";
   font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.30px;
+  letter-spacing: -0.3px;
 `;
 
 // Navigation Component Styles
@@ -28,8 +27,8 @@ const MainNavigation = styled.nav`
   width: 100%;
   font-size: 14px;
   font-weight: 200;
-  display: ${props => props.navToggled ? 'flex' : 'none'};
-  flex-direction: ${props => props.navToggled ? 'column' : null};
+  display: ${props => (props.navToggled ? "flex" : "none")};
+  flex-direction: ${props => (props.navToggled ? "column" : null)};
   @media only screen and (min-width: 769px) {
     display: flex;
     flex-direction: row;
@@ -42,11 +41,11 @@ const MainNavigation = styled.nav`
 // Navigation Link Styles
 const NavLinkStyles = css`
   padding: 1em 0;
-  color: #4A4A4A;
+  color: #4a4a4a;
   &:hover {
     text-decoration: underline;
   }
-  border-bottom: 1px solid #C5C5C5;
+  border-bottom: 1px solid #c5c5c5;
   &:last-child {
     border-bottom: none;
     padding-bottom: 0px;
@@ -78,7 +77,7 @@ const IndexNavLink = styled(IndexLink)`
 
 // External Site Arrow
 const NavOutIcon = styled.i`
-  color: #4A4A4A;
+  color: #4a4a4a;
   font-size: 14px;
   display: inline;
   padding: 0 0 0 8px;
@@ -89,44 +88,70 @@ const NavOutIcon = styled.i`
 
 // Navigation Component
 class Navigation extends Component {
-
   // Component state for navigation toggle on mobile devices
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {navToggled: false};
-    
+    this.state = { navToggled: false };
+
     // Bind helper function 'this' in the constructor to cleanup the render function
     this.toggleNav = this.toggleNav.bind(this);
     // Bind helper function 'this' to close navigation on navigation link click
     this.handleNavClick = this.handleNavClick.bind(this);
   }
 
-  // Toggle the mobile navigation on mobile 
+  // Toggle the mobile navigation on mobile
   toggleNav() {
     let navToggled = !this.state.navToggled;
-    this.setState({navToggled});
+    this.setState({ navToggled });
   }
 
   // Hide the mobile menu when clicking a link in the navigation
   handleNavClick() {
-    this.setState({navToggled: false});
+    this.setState({ navToggled: false });
   }
 
   render() {
-   return(
-     <Header>
-      <Logo to="/">Austin Lauritsen</Logo>
-      <MenuButton onClick={this.toggleNav} />
-      <MainNavigation navToggled={this.state.navToggled}>
-        <IndexNavLink to="/" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Home</IndexNavLink>
-        <NavLink to="work" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>Work</NavLink>
-        <NavLink to="about" activeStyle={{textDecoration: "underline"}} onClick={this.handleNavClick}>About</NavLink>
-        <NavLink href="http://writing.veryaustin.com">Writing<NavOutIcon className="fa fa-arrow-circle-o-right"/></NavLink>
-        <NavLink to="contact" activeStyle={{ textDecoration: "underline"}} onClick={this.handleNavClick}>Contact</NavLink>
-      </MainNavigation>
-    </Header>
-   );
- }
+    return (
+      <Header>
+        <Logo to="/">Austin Lauritsen</Logo>
+        <MenuButton onClick={this.toggleNav} />
+        <MainNavigation navToggled={this.state.navToggled}>
+          <IndexNavLink
+            to="/"
+            activeStyle={{ textDecoration: "underline" }}
+            onClick={this.handleNavClick}
+          >
+            Home
+          </IndexNavLink>
+          <NavLink
+            to="work"
+            activeStyle={{ textDecoration: "underline" }}
+            onClick={this.handleNavClick}
+          >
+            Work
+          </NavLink>
+          <NavLink
+            to="about"
+            activeStyle={{ textDecoration: "underline" }}
+            onClick={this.handleNavClick}
+          >
+            About
+          </NavLink>
+          <NavLink href="http://writing.veryaustin.com">
+            Writing
+            <NavOutIcon className="fa fa-arrow-circle-o-right" />
+          </NavLink>
+          <NavLink
+            to="contact"
+            activeStyle={{ textDecoration: "underline" }}
+            onClick={this.handleNavClick}
+          >
+            Contact
+          </NavLink>
+        </MainNavigation>
+      </Header>
+    );
+  }
 }
 
 export default Navigation;

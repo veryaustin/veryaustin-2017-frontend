@@ -1,7 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Contact Component renders the work component 1`] = `
 <Contact
   contact={Object {}}
-  fetchContact={[Function]}
+  fetchPage={[Function]}
+  hasErrored={null}
+  isLoading={false}
   store={
     Object {
       "clearActions": [Function],
@@ -11,5 +15,6 @@ exports[`Contact Component renders the work component 1`] = `
       "replaceReducer": [Function],
       "subscribe": [Function],
     }
-  } />
+  }
+/>
 `;

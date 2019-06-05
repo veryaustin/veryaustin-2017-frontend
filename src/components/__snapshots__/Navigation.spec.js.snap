@@ -1,13 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Navigation Component renders the navigation component 1`] = `
 <styled.header>
   <Styled(Link)
-    to="/">
+    to="/"
+  >
     Austin Lauritsen
   </Styled(Link)>
   <MenuButton
-    onClick={[Function]} />
+    onClick={[Function]}
+  />
   <styled.nav
-    navToggled={false}>
+    navToggled={false}
+  >
     <Styled(IndexLink)
       activeStyle={
         Object {
@@ -15,7 +20,8 @@ exports[`Navigation Component renders the navigation component 1`] = `
         }
       }
       onClick={[Function]}
-      to="/">
+      to="/"
+    >
       Home
     </Styled(IndexLink)>
     <Styled(Link)
@@ -25,7 +31,8 @@ exports[`Navigation Component renders the navigation component 1`] = `
         }
       }
       onClick={[Function]}
-      to="work">
+      to="work"
+    >
       Work
     </Styled(Link)>
     <Styled(Link)
@@ -35,14 +42,17 @@ exports[`Navigation Component renders the navigation component 1`] = `
         }
       }
       onClick={[Function]}
-      to="about">
+      to="about"
+    >
       About
     </Styled(Link)>
     <Styled(Link)
-      href="http://writing.veryaustin.com">
+      href="http://writing.veryaustin.com"
+    >
       Writing
       <styled.i
-        className="fa fa-arrow-circle-o-right" />
+        className="fa fa-arrow-circle-o-right"
+      />
     </Styled(Link)>
     <Styled(Link)
       activeStyle={
@@ -51,7 +61,8 @@ exports[`Navigation Component renders the navigation component 1`] = `
         }
       }
       onClick={[Function]}
-      to="contact">
+      to="contact"
+    >
       Contact
     </Styled(Link)>
   </styled.nav>

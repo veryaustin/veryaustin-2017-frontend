@@ -1,6 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`Work Component renders the work component 1`] = `
 <Work
-  fetchWork={[Function]}
+  fetchPage={[Function]}
+  hasErrored={null}
+  isLoading={false}
   store={
     Object {
       "clearActions": [Function],
@@ -11,5 +15,6 @@ exports[`Work Component renders the work component 1`] = `
       "subscribe": [Function],
     }
   }
-  work={Object {}} />
+  work={Object {}}
+/>
 `;

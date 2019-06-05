@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section Component renders the Section with passed props 1`] = `
+<styled.section
+  caption="This is a caption"
+  description="This is a description"
+  image_url="http://example.com/test.svg"
+  items={
+    Array [
+      Object {
+        "name": "item1",
+      },
+      Object {
+        "name": "item2",
+      },
+      Object {
+        "name": "item3",
+      },
+    ]
+  }
+  label="This is a label"
+  primary_site_button="Primary Button"
+  primary_site_url="http://example_primary_site.com/"
+  secondary_site_button="Secondary Button"
+  secondary_site_url="http://example_primary_site.com/"
+  title="Test Title"
+>
+  <Styled(styled.div)>
+    <styled.h1>
+      Test Title
+    </styled.h1>
+    <styled.h3>
+      This is a caption
+    </styled.h3>
+    <styled.p>
+      This is a description
+    </styled.p>
+    <styled.div>
+      <Link
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        target="_blank"
+        to="http://example_primary_site.com/"
+      >
+        <Button>
+          Primary Button
+        </Button>
+      </Link>
+      <Link
+        onlyActiveOnIndex={false}
+        style={Object {}}
+        target="_blank"
+        to="http://example_primary_site.com/"
+      >
+        <Button
+          caption="This is a caption"
+          description="This is a description"
+          image_url="http://example.com/test.svg"
+          items={
+            Array [
+              Object {
+                "name": "item1",
+              },
+              Object {
+                "name": "item2",
+              },
+              Object {
+                "name": "item3",
+              },
+            ]
+          }
+          label="This is a label"
+          primary_site_button="Primary Button"
+          primary_site_url="http://example_primary_site.com/"
+          secondary={true}
+          secondary_site_button="Secondary Button"
+          secondary_site_url="http://example_primary_site.com/"
+          title="Test Title"
+        >
+          Secondary Button
+        </Button>
+      </Link>
+    </styled.div>
+  </Styled(styled.div)>
+  <Styled(styled.div)>
+    <styled.img
+      src="http://example.com/test.svg"
+    />
+  </Styled(styled.div)>
+  <Grid
+    gridItems={
+      Array [
+        Object {
+          "name": "item1",
+        },
+        Object {
+          "name": "item2",
+        },
+        Object {
+          "name": "item3",
+        },
+      ]
+    }
+    label="This is a label"
+  />
+</styled.section>
+`;

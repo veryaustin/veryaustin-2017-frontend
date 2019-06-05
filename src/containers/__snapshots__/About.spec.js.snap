@@ -1,7 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
 exports[`About Component renders the about component 1`] = `
 <About
   about={Object {}}
-  fetchAbout={[Function]}
+  fetchPage={[Function]}
+  hasErrored={null}
+  isLoading={false}
   store={
     Object {
       "clearActions": [Function],
@@ -11,5 +15,6 @@ exports[`About Component renders the about component 1`] = `
       "replaceReducer": [Function],
       "subscribe": [Function],
     }
-  } />
+  }
+/>
 `;

@@ -1,13 +1,12 @@
-import React, {PropTypes} from 'react';
-import styled from 'styled-components';
-import {Link} from 'react-router';
+import React, { PropTypes } from "react";
+import styled from "styled-components";
 
 // Container for individual grid item
 const Item = styled.div`
   width: 50vw;
   height: 50vw;
   background-color: ${props => props.color};
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   &:hover {
     transform: scale(1.02);
     box-shadow: 0px 0px 10px #000000;
@@ -26,14 +25,14 @@ const ItemImage = styled.img`
 `;
 
 // GridItem Component
-const GridItem = (props) => {
-  const {site_url, background_color, logo_url} = props.gridItem;
+const GridItem = props => {
+  const { site_url, background_color, logo_url } = props.gridItem;
   return (
-    <Link to={site_url} target="_blank">
+    <a href={site_url} target="_blank">
       <Item color={background_color}>
-        <ItemImage src={logo_url}/>
+        <ItemImage src={logo_url} />
       </Item>
-    </Link>
+    </a>
   );
 };
 

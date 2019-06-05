@@ -1,22 +1,19 @@
 {
-  "presets": [
-    "react",
-    "stage-1"
-  ],
+  "presets": ["react", "stage-1"],
   "env": {
     "development": {
-      "presets": [
-        "latest",
-        "react-hmre"
-      ]
+      "presets": ["latest", "react-hmre"]
     },
     "production": {
       "presets": [
-        ["latest", {
-          "es2015": {
-            "modules": false
-          }  
-        }],
+        [
+          "latest",
+          {
+            "es2015": {
+              "modules": false
+            }
+          }
+        ]
       ],
       "plugins": [
         "transform-react-constant-elements",
@@ -24,10 +21,7 @@
       ]
     },
     "test": {
-      "presets": [
-        "latest"
-      ]
+      "presets": ["latest"]
     }
   }
 }
-
